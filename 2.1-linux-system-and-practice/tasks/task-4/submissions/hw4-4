@@ -1,0 +1,13 @@
+11:-rw-rw-r-- 1 ec2-user ec2-user 841  4월  6 06:54 exec.txt
+12:-rw-rw-r-- 1 ec2-user ec2-user 841  4월  6 06:54 exec2.txt
+13:-rw-rw-r-- 1 ec2-user ec2-user 841  4월  6 06:54 exec3.txt
+    1  sudo yum update
+    2  ls
+    3  mkdir linuxlec0323
+    4  cd linuxlec0323/
+    5  ls
+    6  vi viexample
+    7  clear
+    8  ls
+    9  sudo ssh-keygen
+   10  cd .ssh

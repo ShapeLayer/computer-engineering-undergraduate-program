@@ -1,0 +1,46 @@
+2022년 3월 21일 월요일 16시 10분 08초 KST
+total 0
+drwxr-xr-x  5 shapelayer  staff  160  3 21 16:07 dir1
+drwxr-xr-x  5 shapelayer  staff  160  3 21 16:07 dir2
+drwxr-xr-x  2 shapelayer  staff   64  3 21 15:53 dir3
+drwxr-xr-x  3 shapelayer  staff   96  3 21 16:08 dir4
+
+linux_hw2/dir1:
+total 8
+drwxr-xr-x  5 shapelayer  staff  160  3 21 16:07 dir11
+-rw-r--r--  1 shapelayer  staff  240  3 21 15:54 file11
+
+linux_hw2/dir1/dir11:
+total 8
+drwxr-xr-x  4 shapelayer  staff  128  3 21 15:55 dir111
+-rw-r--r--  1 shapelayer  staff  240  3 21 15:54 file111
+
+linux_hw2/dir1/dir11/dir111:
+total 16
+-rw-r--r--  1 shapelayer  staff  240  3 21 15:55 file1111
+-rw-r--r--  1 shapelayer  staff  240  3 21 15:55 file1112
+
+linux_hw2/dir2:
+total 0
+drwxr-xr-x  3 shapelayer  staff   96  3 21 16:07 dir21
+drwxr-xr-x  4 shapelayer  staff  128  3 21 16:07 dir22
+
+linux_hw2/dir2/dir21:
+total 8
+-rw-r--r--  1 shapelayer  staff  240  3 21 15:56 file211
+
+linux_hw2/dir2/dir22:
+total 0
+drwxr-xr-x  4 shapelayer  staff  128  3 21 15:56 dir221
+
+linux_hw2/dir2/dir22/dir221:
+total 16
+-rw-r--r--  1 shapelayer  staff  240  3 21 15:56 file2211
+-rw-r--r--  1 shapelayer  staff  240  3 21 15:56 file2212
+
+linux_hw2/dir3:
+total 0
+
+linux_hw2/dir4:
+total 8
+-rw-r--r--  1 shapelayer  staff  240  3 21 15:50 file41

@@ -1,0 +1,6 @@
+[submodule "1.1-introduction-to-engineering-design/project"]
+	path = 1.1-introduction-to-engineering-design/project
+	url = https://github.com/ShapeLayer/advanced-sticky-note.git
+[submodule "3.1-software-enginnering/project"]
+	path = 3.1-software-enginnering/project
+	url = https://github.com/ShapeLayer/se-lecture-task__project-structure-definitions.git

@@ -1,0 +1,19 @@
+With nohup /home/ec2-user/linux_hw3:
+합계 48
+-rw-rw-r-- 1 ec2-user ec2-user  841  4월  3 04:26 exec.txt
+-rw-rw-r-- 1 ec2-user ec2-user  841  4월  3 04:26 exec2.txt
+-rw-rw-r-- 1 ec2-user ec2-user  841  4월  3 04:26 exec3.txt
+-rw-rw-r-- 1 ec2-user ec2-user  212  4월  3 04:26 hw3-1
+-rw-rw-r-- 1 ec2-user ec2-user  248  4월  3 04:27 hw3-2
+-rw-rw-r-- 1 ec2-user ec2-user  170  4월  3 04:27 hw3-3
+-rw-rw-r-- 1 ec2-user ec2-user  316  4월 17 13:04 hw6-1
+-rw-rw-r-- 1 ec2-user ec2-user  136  4월 17 13:07 hw6-2
+-rw-rw-r-- 1 ec2-user ec2-user 2150  4월 17 13:07 hw6.out
+-rw-rw-r-- 1 ec2-user ec2-user   65  4월  3 04:25 limits.h
+-rw-rw-r-- 1 ec2-user ec2-user  215  4월  3 04:25 str.h
+drwxrwxr-x 2 ec2-user ec2-user   19  4월  3 04:27 temp
+-rw-rw-r-- 1 ec2-user ec2-user  841  4월  3 04:26 test.txt
+
+/home/ec2-user/linux_hw3/temp:
+합계 4
+-rw-rw-r-- 1 ec2-user ec2-user 841  4월  3 04:25 str.c

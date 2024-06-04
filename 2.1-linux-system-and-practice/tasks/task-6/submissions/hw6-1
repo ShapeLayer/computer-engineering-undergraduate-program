@@ -1,0 +1,15 @@
+1st command #ifndef _LIMITS_H_
+#define _LIMITS_H_
+
+#define MAX_STR_LEN 1023
+
+#ifndef _STR_H_
+#define _STR_H_
+#include <limits.h> /* for MAX_STR_LEN */
+#include <unistd.h> /* for typedef of size_t */
+
+size_t StrGetLength(const char* pcSrc);
+char *StrToLower(char *str);
+
+#endif /* _STR_H_ */ shows
+2nd command  shows

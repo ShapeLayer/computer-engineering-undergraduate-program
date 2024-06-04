@@ -1,0 +1,48 @@
+
+---------- 2 ec2-user ec2-user  126  4월  6 07:27 file.txt
+---------- 2 ec2-user ec2-user  126  4월  6 07:27 file_hardlink.txt
+-rw-rw-r-- 1 ec2-user ec2-user    0  4월  6 07:50 hw5-1
+-rw-rw-r-- 1 ec2-user ec2-user   65  4월  6 06:54 limits.h
+-rw-rw-r-- 1 ec2-user ec2-user  170  4월  6 06:54 hw3-3
+-rw-rw-r-- 1 ec2-user ec2-user  212  4월  6 06:54 hw3-1
+-rw-rw-r-- 1 ec2-user ec2-user  215  4월  6 06:54 str.h
+-rw-rw-r-- 1 ec2-user ec2-user  248  4월  6 06:54 hw3-2
+-rw-rw-r-- 1 ec2-user ec2-user  362  4월  6 06:59 hw4-4
+-rw-rw-r-- 1 ec2-user ec2-user  444  4월  6 06:54 hw4-1
+-rw-rw-r-- 1 ec2-user ec2-user  450  4월  6 06:56 hw4-3
+-rw-rw-r-- 1 ec2-user ec2-user  841  4월  6 06:54 exec.txt
+-rw-rw-r-- 1 ec2-user ec2-user  841  4월  6 06:54 test.txt
+-rw-rw-r-- 1 ec2-user ec2-user 1039  4월  6 06:59 hw4-2
+-rw-rw-r-- 1 ec2-user ec2-user 841  4월  6 06:54 str.c
+-rwxr-x--x 1 ec2-user ec2-user  841  4월  6 06:54 exec2.txt
+-rwxr-x--x 1 ec2-user ec2-user  841  4월  6 06:54 exec3.txt
+drwxrwxr-x 2 ec2-user ec2-user  19  4월  6 06:54 .
+drwxrwxr-x 4 ec2-user ec2-user 295  4월  6 07:50 ..
+lrwxrwxrwx 1 ec2-user ec2-user    8  4월  6 07:46 file_symlink.txt -> file.txt
+temp:
+합계 4
+2022. 04. 06. (수) 07:50:02 UTC
+
+-rw-rw-r-- 1 ec2-user ec2-user   65  4월  6 06:54 limits.h
+-rw-rw-r-- 1 ec2-user ec2-user  170  4월  6 06:54 hw3-3
+-rw-rw-r-- 1 ec2-user ec2-user  212  4월  6 06:54 hw3-1
+-rw-rw-r-- 1 ec2-user ec2-user  215  4월  6 06:54 str.h
+-rw-rw-r-- 1 ec2-user ec2-user  248  4월  6 06:54 hw3-2
+-rw-rw-r-- 1 ec2-user ec2-user  362  4월  6 06:59 hw4-4
+-rw-rw-r-- 1 ec2-user ec2-user  444  4월  6 06:54 hw4-1
+-rw-rw-r-- 1 ec2-user ec2-user  450  4월  6 06:56 hw4-3
+-rw-rw-r-- 1 ec2-user ec2-user  841  4월  6 06:54 exec.txt
+-rw-rw-r-- 1 ec2-user ec2-user  841  4월  6 06:54 test.txt
+-rw-rw-r-- 1 ec2-user ec2-user 1039  4월  6 06:59 hw4-2
+-rw-rw-r-- 1 ec2-user ec2-user 1234  4월  6 07:50 hw5-1
+-rw-rw-r-- 1 ec2-user ec2-user 841  4월  6 06:54 str.c
+-rwxr----- 2 ec2-user ec2-user  126  4월  6 07:27 file.txt
+-rwxr----- 2 ec2-user ec2-user  126  4월  6 07:27 file_hardlink.txt
+-rwxr-x--x 1 ec2-user ec2-user  841  4월  6 06:54 exec2.txt
+-rwxr-x--x 1 ec2-user ec2-user  841  4월  6 06:54 exec3.txt
+drwxrwxr-x 2 ec2-user ec2-user  19  4월  6 06:54 .
+drwxrwxr-x 4 ec2-user ec2-user 295  4월  6 07:50 ..
+lrwxrwxrwx 1 ec2-user ec2-user    8  4월  6 07:46 file_symlink.txt -> file.txt
+temp:
+합계 4
+0002

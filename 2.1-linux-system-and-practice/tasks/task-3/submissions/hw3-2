@@ -1,0 +1,7 @@
+limits.h:4:#define MAX_STR_LEN 1023
+str.h:1:#ifndef _STR_H_
+str.h:2:#define _STR_H_
+str.h:3:#include <limits.h> /* for MAX_STR_LEN */
+str.h:6:size_t StrGetLength(const char* pcSrc);
+str.h:7:char *StrToLower(char *str);
+str.h:9:#endif /* _STR_H_ */

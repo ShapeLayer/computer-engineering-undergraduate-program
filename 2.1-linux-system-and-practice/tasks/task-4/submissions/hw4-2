@@ -1,0 +1,18 @@
+`ls -al` $PATH
+합계 52
+drwxrwxr-x 3 ec2-user ec2-user 204  4월  6 06:59 .
+drwx------ 9 ec2-user ec2-user 258  4월  6 06:54 ..
+-rw-rw-r-- 1 ec2-user ec2-user 841  4월  6 06:54 exec.txt
+-rw-rw-r-- 1 ec2-user ec2-user 841  4월  6 06:54 exec2.txt
+-rw-rw-r-- 1 ec2-user ec2-user 841  4월  6 06:54 exec3.txt
+-rw-rw-r-- 1 ec2-user ec2-user 212  4월  6 06:54 hw3-1
+-rw-rw-r-- 1 ec2-user ec2-user 248  4월  6 06:54 hw3-2
+-rw-rw-r-- 1 ec2-user ec2-user 170  4월  6 06:54 hw3-3
+-rw-rw-r-- 1 ec2-user ec2-user 444  4월  6 06:54 hw4-1
+-rw-rw-r-- 1 ec2-user ec2-user  15  4월  6 06:59 hw4-2
+-rw-rw-r-- 1 ec2-user ec2-user 450  4월  6 06:56 hw4-3
+-rw-rw-r-- 1 ec2-user ec2-user 188  4월  6 06:56 hw4-4
+-rw-rw-r-- 1 ec2-user ec2-user  65  4월  6 06:54 limits.h
+-rw-rw-r-- 1 ec2-user ec2-user 215  4월  6 06:54 str.h
+drwxrwxr-x 2 ec2-user ec2-user  19  4월  6 06:54 temp
+-rw-rw-r-- 1 ec2-user ec2-user 841  4월  6 06:54 test.txt /usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/ec2-user/.local/bin:/home/ec2-user/bin [\u@\h \W]\$ 
