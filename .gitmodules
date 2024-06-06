@@ -4,3 +4,6 @@
 [submodule "3.1-software-enginnering/project"]
 	path = 3.1-software-enginnering/project
 	url = https://github.com/ShapeLayer/se-lecture-task__project-structure-definitions.git
+[submodule "2.1-logic-circuits-design/project"]
+	path = 2.1-logic-circuits-design/project
+	url = https://github.com/ShapeLayer/quine-mccluskey-method-calculator.git
