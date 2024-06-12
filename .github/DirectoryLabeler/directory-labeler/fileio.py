@@ -26,7 +26,7 @@ def write_readme_each_directories(manifests: dict[str, Manifest]):
         with open(join(dir, 'README.md'), 'w', encoding='utf-8') as f:
             f.write(template.format(summary=manifest.render()))
 
-rs_each_lecture_summary = '[[{code}]	{name}({prof}, {opened_at})]({path})@{dept}'
+rs_each_lecture_summary = '| {code} | [{name}({prof}, {opened_at})]({path}) | @{dept} |'
 def write_root_summary_readme(manifests: dict[str, Manifest]):
     template = open('template.md').read() if isfile('template.md') else '{summary}'
     content = []
@@ -42,6 +42,6 @@ def write_root_summary_readme(manifests: dict[str, Manifest]):
                 path=f'./{dir}'
             )
         )
-    summary = '\n'.join([f'* {each}' for each in content])
+    summary = '\n'.join(['| | 과목명 | |', '| :-: | :-: | :-: |'] + content)
     with open('README.md', 'w', encoding='utf-8') as f:
         f.write(template.format(summary=summary))
