@@ -1,6 +1,4 @@
-# ##_name_##
-
-##_summary_##
+{summary}
 
 ## 목차
 
