@@ -1,0 +1,20 @@
+>>> var1 = 100
+>>> var2 = 200
+>>> res = var1 + var2
+>>> print(res)
+300
+>>> type(res)
+<class 'int'>
+>>>
+>>> var1 = 100.0
+>>> var2 = 100.0
+>>> res = var1 + var2
+>>> print(res)
+200.0
+>>> type(res)
+<class 'float'>
+>>>
+>>> print('박종현')
+박종현
+>>> print('학번: 214823')
+학번: 214823
