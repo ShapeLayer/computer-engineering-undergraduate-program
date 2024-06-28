@@ -2,7 +2,7 @@
 #set page("a4",
   margin: (x: 3em, y: 4em)
 )
-#set text(font: "Noto Sans CJK KR", size: .9em)
+#set text(font: ("Noto Sans CJK KR", "Noto Sans KR"), size: .9em)
 #show: codly-init.with()
 #codly(languages: (
   py: (name: "Python", icon: "", color: rgb("#3572A5")),
