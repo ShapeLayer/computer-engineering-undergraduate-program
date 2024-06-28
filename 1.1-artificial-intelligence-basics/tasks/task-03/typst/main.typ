@@ -8,7 +8,7 @@
 
 #show heading.where(level: 2): it => text(size: 1.4em, it.body + v(.5em))
 
-Homework 02
+Homework 03
 \
 
 \
