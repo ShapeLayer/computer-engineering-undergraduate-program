@@ -2,7 +2,7 @@ hap, i = 0, 0
 for i in range(1, 11):
     if i % 3 == 0:
         continue
-    hap +=i
+    hap += i
     print(i, end =' ')
 
 print()
