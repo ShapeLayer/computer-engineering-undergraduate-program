@@ -177,8 +177,8 @@ print('I like {0} and {1}'.format('apple', 'orange'))
 print('I like {1} and {0}'.format('apple', 'orange'))
 print('I like {0} and {0}'.format('apple', 'orange'))
 print('정수 {}'.format(10))
-print('정수 {} and {}'.format(10,20))
-print('정수 {0:5d} and {1:5d}'.format(10,20))
+print('정수 {} and {}'.format(10, 20))
+print('정수 {0:5d} and {1:5d}'.format(10, 20))
 '''
 
 '''
@@ -225,7 +225,7 @@ for i in range(1, 4):
 
 '''
 hap = 0
-for i in range (1,11):
+for i in range (1, 11):
     if i % 2 == 0 or i % 3 == 0:
         continue
 hap += i
