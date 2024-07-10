@@ -13,11 +13,11 @@ print(letters)
 
 '''
 fruits_list=[]
-fruits_list.append("사과")
-fruits_list.append("바나나")
-fruits_list.append("망고")
+fruits_list.append('사과')
+fruits_list.append('바나나')
+fruits_list.append('망고')
 print(fruits_list)
-fruits_list = fruits_list + ['수박', "자몽"]
+fruits_list = fruits_list + ['수박', '자몽']
 print(fruits_list)
 '''
 
