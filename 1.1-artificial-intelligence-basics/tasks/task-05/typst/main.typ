@@ -105,6 +105,8 @@ Homework 05
   ]
 )
 
+#pagebreak()
+
 [4] 10-2. 24~26 쪽
 
 #figure(
