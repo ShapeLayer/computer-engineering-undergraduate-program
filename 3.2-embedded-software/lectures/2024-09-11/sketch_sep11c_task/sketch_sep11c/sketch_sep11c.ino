@@ -24,10 +24,10 @@ void loop() {
   int isDnSwPressed = !digitalRead(PIN_SW_DN);
   if (isDnSwPressed) ledLight--;
 
-  Serial.println("isUpSwPressed: " + String(isUpSwPressed) + ", isDnSwPressed: " + String(isDnSwPressed) + ", ledLight: " + String(ledLight));
-
   if (ledLight < LIGHT_MIN) ledLight = LIGHT_MIN;
   if (ledLight > LIGHT_MAX) ledLight = LIGHT_MAX;
+
+  Serial.println("isUpSwPressed: " + String(isUpSwPressed) + ", isDnSwPressed: " + String(isDnSwPressed) + ", ledLight: " + String(ledLight));
   
   analogWrite(PIN_LED, ledLight);
 }
