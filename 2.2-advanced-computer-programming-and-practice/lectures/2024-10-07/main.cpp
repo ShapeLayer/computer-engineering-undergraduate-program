@@ -26,8 +26,8 @@ public:
 
   void print() {
     cout << this->name << endl;
-    cout << "chief " << this->chief->name << " ; " << this->chief->phone << endl;
-    cout << "manager " << this->manager->name << " ; " << this->manager->phone << endl;
+    cout << "chief " << this->chief->name << "; " << this->chief->phone << endl;
+    cout << "manager " << this->manager->name << "; " << this->manager->phone << endl;
   }
 };
 
