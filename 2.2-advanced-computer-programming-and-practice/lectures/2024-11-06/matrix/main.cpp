@@ -12,29 +12,29 @@ public:
     }
   }
 
-  int get_each(int i, int j) {
+  inline int get_each(int i, int j) const {
     return data[i][j];
   }
-  void set_each(int i, int j, int val) {
+  inline void set_each(int i, int j, int val) {
     data[i][j] = val;
   }
 
-  Matrix operator+(Matrix &m2) {
+  Matrix operator+(const Matrix &other) const {
     Matrix m(rows, cols);
     for (int i = 0; i < rows; i++) {
       for (int j = 0; j < cols; j++) {
-        m.set_each(i, j, this->get_each(i, j) + m2.get_each(i, j));
+        m.set_each(i, j, this->get_each(i, j) + other.get_each(i, j));
       }
     }
     return m;
   }
-  Matrix operator*(Matrix &m2) {
-    Matrix m(rows, m2.cols);
+  Matrix operator*(const Matrix &other) const {
+    Matrix m(rows, other.cols);
     for (int i = 0; i < rows; i++) {
-      for (int j = 0; j < m2.cols; j++) {
+      for (int j = 0; j < other.cols; j++) {
         int sum = 0;
         for (int k = 0; k < cols; k++) {
-          sum += this->get_each(i, k) * m2.get_each(k, j);
+          sum += this->get_each(i, k) * other.get_each(k, j);
         }
         m.set_each(i, j, sum);
       }
@@ -116,4 +116,6 @@ int main() {
     cout << endl;
   }
   cout << endl;
+
+  return 0;
 }
