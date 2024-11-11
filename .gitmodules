@@ -7,3 +7,6 @@
 [submodule "2.1-logic-circuits-design/project"]
 	path = 2.1-logic-circuits-design/project
 	url = https://github.com/ShapeLayer/quine-mccluskey-method-calculator.git
+[submodule "3.2-embedded-software/projects/1-midterm"]
+	path = 3.2-embedded-software/projects/1-midterm
+	url = https://github.com/undefined-rainy-storm/embedded-rhythm-game-controller
