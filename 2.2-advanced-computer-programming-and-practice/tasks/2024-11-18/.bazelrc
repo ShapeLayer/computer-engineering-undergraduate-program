@@ -1,0 +1,14 @@
+# Common settings
+build --enable_platform_specific_config
+
+# Linux-specific settings
+build:linux --cpu=k8
+build:linux --compiler=gcc
+
+# Windows-specific settings
+build:windows --cpu=x64_windows
+build:windows --compiler=msvc
+
+# macOS-specific settings
+build:macos --cpu=darwin
+build:macos --compiler=clang
