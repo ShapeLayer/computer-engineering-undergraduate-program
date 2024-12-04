@@ -107,7 +107,7 @@
   ..while n < 40 {
     n = n + 1
     (figure(
-      caption: "시도 #" + str(n) + "의 추정 결과",
+      caption: "시도 #" + str(n) + "에 사용한 손글씨 데이터",
       image("assets/handwritten/slice" + str(n) + ".jpg")
     ),)
   }
