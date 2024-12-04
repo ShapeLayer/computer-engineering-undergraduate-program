@@ -99,7 +99,7 @@
 = 부록
 == 손글씨 데이터
 
-#let n = 1
+#let n = 0
 #grid(
   columns: 2,
   inset: 1pt,
@@ -115,7 +115,7 @@
 
 == 적절한 전처리를 거친 데이터의 평가 결과 <result-a>
 
-#let n = 1
+#let n = 0
 #grid(
   columns: 2,
   inset: 1pt,
@@ -131,7 +131,7 @@
 
 == 부적절한 전처리를 거친 데이터의 평가 결과 <result-b>
 
-#let n = 1
+#let n = 0
 #grid(
   columns: 2,
   inset: 1pt,
