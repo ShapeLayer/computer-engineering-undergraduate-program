@@ -10,3 +10,9 @@
 [submodule "3.2-embedded-software/projects/1-midterm"]
 	path = 3.2-embedded-software/projects/1-midterm
 	url = https://github.com/undefined-rainy-storm/embedded-rhythm-game-controller
+[submodule "3.2-embedded-software/projects/2-final"]
+	path = 3.2-embedded-software/projects/2-final
+	url = https://github.com/undefined-rainy-storm/embedded-voice-kkutu
+[submodule "3.2-computer-engineering-project1(capstone-design)/project"]
+	path = 3.2-computer-engineering-project1(capstone-design)/project
+	url = https://github.com/undefined-rainy-storm/capstone-early
