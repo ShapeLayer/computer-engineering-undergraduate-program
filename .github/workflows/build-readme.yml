@@ -3,10 +3,7 @@ name: Build Docs
 permissions:
   contents: write
 
-on:
-  push:
-    branches:
-      - main
+on: workflow_dispatch
 
 jobs:
   build:
