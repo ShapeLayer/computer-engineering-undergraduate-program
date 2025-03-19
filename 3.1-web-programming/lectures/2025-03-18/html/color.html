@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colors</title>
+</head>
+<body>
+  <script type="text/javascript">
+    const onColorChanged = (value) => {
+      document.body.style.color = value
+    }
+  </script>
+  <h3>컬러 다이얼로그로 색 입력</h3>
+  <hr />
+  <form type="color">
+    <label for="color-selector">
+      색 선택
+      <input type="color" value="#00bfff" onchange="onColorChanged(this.value)"/>
+    </label>
+  </form>
+</body>
+</html>
