@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>214823 박종현</title>
+  <style>
+    label {
+      display: block;
+    }
+    gap {
+      display: block;
+      width: 1em;
+      height: 1em;
+      content: '';
+    }
+    form div {
+      margin-bottom: 1em;
+    }
+    .characters label {
+      display: inline-block;
+    }
+    .characters img {
+      max-width: 200px;
+    }
+  </style>
+</head>
+<body>
+<h1>정보를 입력하세요</h1>
+<hr />
+  <div>
+    <form action="#">
+      <div>
+        <label for="major">학과 입력 : <input type="text" id="major" name="major" value="학과 입력" /></label>
+        <!-- 혹은
+          <label for="major">학과 입력 : <input type="text" id="major" name="major" placeholder="학과 입력" /></label>
+        -->
+        <label for="email">메일 주소 : <input type="email" id="email" name="email" /></label>
+        <label for="username">사용자 ID : <input type="text" id="username" name="username" value="ID입력" /></label>
+        <!-- 혹은
+          <label for="username">사용자 ID : <input type="text" id="username" name="username" placeholder="ID입력" /></label>
+        -->
+        <label for="password">비밀 번호 : <input type="password" id="password" name="password" /></label>
+      </div>
+      <div>
+        <h3>최애 캐릭터를 선택하세요</h3>
+        <hr />
+        <div class="characters">
+          <label for="kita_ikuyo">
+            <input type="radio" id="kita_ikuyo" name="character" value="kita_ikuyo" />
+            <img src="./assets/kita_ikuyo.jpg" onerror="onImageSrcError(this, 'KITA_IKUYO')">
+          </label>
+          <label for="iseri_nina">
+            <input type="radio" id="iseri_nina" name="character" value="iseri_nina" checked />
+            <img src="./assets/iseri_nina.webp" onerror="onImageSrcError(this, 'ISERI_NINA')">
+          </label>
+          <label for="hiroi_kikuri">
+            <input type="radio" id="hiroi_kikuri" name="character" value="hiroi_kikuri" />
+            <img src="./assets/hiroi_kikuri.jpg" onerror="onImageSrcError(this, 'HIROI_KIKURI')">
+          </label>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script type="text/javascript">
+    const ISERI_NINA = 'https://static.wikia.nocookie.net/girls-band-cry/images/4/41/Girls_Band_Cry_Screenshot_5.jpg'
+    const KITA_IKUYO = 'https://m.media-amazon.com/images/I/51vl0IzxzVL._AC_UF894,1000_QL80_.jpg'
+    const HIROI_KIKURI = 'https://64.media.tumblr.com/d2604712efa63570c8a664fc5247ac96/232d22baa469a6b7-02/s540x810/b2a5522cbfaa7e0d16b88c11e8447478c25737d2.jpg'
+
+    const onImageSrcError = (e, srcId) => {
+      let src = ''
+      switch (srcId) {
+        case 'ISERI_NINA':
+          src = ISERI_NINA
+          break
+        case 'KITA_IKUYO':
+          src = KITA_IKUYO
+          break
+        case 'HIROI_KIKURI':
+          src = HIROI_KIKURI
+          break
+        default:
+          src = ''
+          break
+      }
+      e.src = src;
+    }
+  </script>
+</body>
+</html>

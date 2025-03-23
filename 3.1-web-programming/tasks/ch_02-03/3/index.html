@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>214823 박종현</title>
+  <style>
+    label {
+      display: block;
+    }
+    gap {
+      display: block;
+      width: 1em;
+      height: 1em;
+      content: '';
+    }
+  </style>
+</head>
+<body>
+<h1>프로그램</h1>
+<hr />
+<div>
+  <form action="#">
+    <h2>학과를 선택하세요</h2>
+    <label for="ee">전자공학전공<input type="checkbox" id="ee" /></label>
+    <label for="ce">컴퓨터정보통신공학전공<input type="checkbox" id="ce" /></label>
+    <label for="sc">시스템반도체공학전공<input type="checkbox" id="sc" /></label>
+    <h2>희망 사항</h2>
+    <label for="what-to-do">
+      어떤 걸 하고 싶나요?
+      <input type="text" id="what-to-do" name="what-to-do" list="what-to-do-example" />
+      <datalist id="what-to-do-example">
+        <option value="#1"></option>
+        <option value="#2"></option>
+        <option value="#3"></option>
+        <option value="#4"></option>
+      </datalist>
+    </label>
+    <label for="language">
+      어떤 언어를 사용하나요?
+      <select name="language" id="language">
+        <option value="python" selected>python</option>
+        <option value="java">java</option>
+        <option value="c">c</option>
+        <option value="c++">c++</option>
+        <option value="javascript">javascript</option>
+      </select>
+    </label>
+    <gap></gap>
+    <input type="submit" />
+  </form>
+</div>
+</body>
+</html>
