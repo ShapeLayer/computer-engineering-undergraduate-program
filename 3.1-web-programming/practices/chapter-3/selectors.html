@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .div-color {
+      background-color: aqua;
+    }
+    .div-color:nth-child(3n) {
+      background-color: yellow;
+    }
+    #color1 {
+      background-color: red;
+    }
+    #child {
+      color: green;
+    }
+    #child span {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="div-color">1</div>
+  <div class="div-color">2</div>
+  <div class="div-color">3</div>
+  <div class="div-color">4</div>
+  <div class="div-color">5</div>
+  <div class="div-color">6</div>
+  <div class="div-color">7</div>
+  <div class="div-color">8</div>
+  <div class="div-color">9</div>
+  <div class="div-color">10</div>
+  
+  <div id="color1">id1</div>
+  <div id="color2">id2</div>
+
+  <div id="child">
+    div안의 내용
+    <span>span 안의 내용</span>
+    <p>p 안의 내용</p>
+  </div>
+</body>
+</html>
