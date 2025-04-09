@@ -1,0 +1,30 @@
+FROM ubuntu:latest
+
+WORKDIR /usr/src/app
+
+RUN apt-get update && \
+    apt-get install -y wget && \
+    apt-get install -y openjdk-8-jdk && \
+    wget https://downloads.apache.org/hadoop/common/hadoop-3.4.1/hadoop-3.4.1.tar.gz && \
+    tar -xvf hadoop-3.4.1.tar.gz && \
+    rm hadoop-3.4.1.tar.gz
+
+EXPOSE 8088
+EXPOSE 9870
+
+RUN ARCH=$(uname -m) && \
+    if [ "$ARCH" = "x86_64" ]; then \
+        echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> /etc/profile.d/java_home.sh; \
+    elif [ "$ARCH" = "aarch64" ]; then \
+        echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-arm64" >> /etc/profile.d/java_home.sh; \
+    else \
+        echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-$ARCH" >> /etc/profile.d/java_home.sh; \
+    fi && \
+    chmod +x /etc/profile.d/java_home.sh && \
+    echo "source /etc/profile.d/java_home.sh" >> /root/.bashrc
+
+ENV HADOOP_HOME=/usr/src/app/hadoop-3.4.1
+ENV PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+
+ENTRYPOINT ["/bin/bash", "-c", "tail -f /dev/null"]
+# ENTRYPOINT ["/bin/bash", "-c", "source /etc/profile.d/java_home.sh && cd $HADOOP_HOME && ./sbin/start-dfs.sh && ./sbin/start-yarn.sh && tail -f ./logs/*"]
