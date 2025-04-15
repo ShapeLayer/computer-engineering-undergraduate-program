@@ -48,8 +48,8 @@ note score[] = {
   {E5, 4},
   {D5, 2},
   {E5, 3},
-  {B5, 1},
-  {B5, 2},
+  {B5, 3},
+  {B5, 3},
 };
 const int scaler = 125;
 
@@ -57,7 +57,7 @@ int i;
 void setup() {
   for (i = 0; i < 13; i++) {
     note now = score[i];
-    PLAY(now.note, now.duration);
+    PLAY(now.note, now.duration * scaler);
   }
 }
 
