@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    input[type=text] {
+      color: red;
+    }
+    input:hover, textarea:hover {
+      background-color: aliceblue;
+    }
+    input[type=text]:focus, input[type=email]:focus {
+      font-size: 120%;
+    }
+    label {
+      display: block;
+      padding: 10px;
+    }
+    label span {
+      display: inline-block;
+      width: 90px;
+      text-align: right;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <form action="#">
+    <label for="">
+      <span>Name</span> <input type="text" placeholder="Elvis"><br />
+    </label>
+    <label for="">
+      <span>Email</span> <input type="email" placeholder="elvis@graceland.com"><br />
+    </label>
+    <label for="">
+      <span>Comment</span> <textarea name="" id="" placeholder="Type here..."></textarea>
+    </label>
+    <label for="">
+      <!-- 빈 span 태그가 정렬에 도움을 줌 -->
+      <span></span> <input type="submit">
+    </label>
+  </form>
+</body>
+</html>

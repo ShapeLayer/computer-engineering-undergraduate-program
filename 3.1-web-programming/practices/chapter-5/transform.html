@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      display: inline-block;
+      padding: 5px;
+      color: white;
+      background-color: olivedrab;
+    }
+
+    div#rotate { transform: rotate(20deg); }
+    div#skew { transform: skew(0, -20deg); } /* skew(x, y) */
+    div#translate { transform: translateY(100px); }
+    div#scale { transform: scale(3, 1); }
+
+    div#rotate:hover { transform: rotate(80deg); }
+    div#skew:hover { transform: skew(0, -45deg); }
+    div#translate:hover { transform: translate(50px, 100px); }
+    div#scale:hover { transform: scale(4, 2); }
+
+    div#scale:active { transform: scale(1, 5); }
+  </style>
+</head>
+<body>
+  <div id="rotate">rotate 20 deg</div>
+  <div id="skew">skew(0, -20deg)</div>
+  <div id="translate">translateY(100px)</div>
+  <div id="scale">scale(3, 1)</div>
+</body>
+</html>
