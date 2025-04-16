@@ -1,0 +1,41 @@
+<!--
+  Requirements:
+  - assets/Magic_Deck.png https://static.wikia.nocookie.net/balatrogame/images/c/c3/Magic_Deck.png/revision/latest
+  - assets/Nebula_Deck.png https://static.wikia.nocookie.net/balatrogame/images/1/12/Nebula_Deck.png/revision/latest
+  - assets/Ghost_Deck.png https://static.wikia.nocookie.net/balatrogame/images/a/a1/Ghost_Deck.png/revision/latest
+  - assets/Erratic_Deck.png https://static.wikia.nocookie.net/balatrogame/images/1/17/Erratic_Deck.png/revision/latest
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>214823 박종현</title>
+  <style>
+    *:root {
+      --card-width: 142px;
+      --card-height: 190px;
+    }
+    .card {
+      width: var(--card-width);
+      height: var(--card-height);
+      border: 2px solid black;
+      border-radius: .25em;
+      background-color: white;
+    }
+    #transition-target, #transition-target:hover {
+      transition: 2s ease;
+    }
+    #transition-target:hover {
+      transform: translateX(100px);
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <div>
+      <img id="transition-target" class="card nebula" src="./assets/Nebula_Deck.png" alt="">
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>214823 박종현</title>
+  <style>
+    /* 과제 달성 요구사항에 포함되지 않음 */
+    html {
+      margin: 0;
+    }
+    body {
+      /*padding: 1em;*/
+      max-width: 1024px;
+      margin: auto;
+    }
+    header {
+      display: flex;
+      justify-content: center;
+    }
+    nav {
+      /*width: 100%;*/
+    }
+    main {
+      margin: 1em 0;
+    }
+  </style>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* header */
+    header {
+      background-color: #f1f1f1;
+      padding: 10px;
+      text-align: center;
+    }
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 48px;
+      color: #ff6b6b;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
+    }
+
+    /* nav */
+    nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+    }
+    nav .nav-wrapper {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1em;
+    }
+    nav .nav-wrapper-wrapper {
+      width: 100%;
+    }
+    nav .nav-wrapper.nav-search-wrapper {
+      justify-content: center;
+    }
+    nav .nav-wrapper.nav-login-wrapper {
+      justify-content: flex-end;
+    }
+    #nav-login fieldset {
+      border: 2px solid #ccc;
+    }
+    nav .nav-login-section {
+      display: flex;
+    }
+    nav .nav-login-section.nav-login-root {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: .5em;
+    }
+    nav .nav-login-section.nav-login-left {
+      flex-direction: column;
+      gap: .25em;
+    }
+    nav .nav-login-section label {
+      display: inline-block;
+    }
+
+    /* main */
+    main {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+    }
+    main aside.ad, main section.content {
+      padding: 1em;
+      border: 2px solid #ccc;
+    }
+    main aside.ad h2, main section.content h2 {
+      margin: 0 auto;
+    }
+    main aside.ad {
+      flex: 1;
+      max-width: 200px;
+    }
+    main section.content {
+      flex: 3;
+    }
+    /*
+    main aside {
+      margin-right: 20px;
+    }
+    */
+
+    /* footer */
+    footer {
+      background-color: #f1f1f1;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>웹 프로그래밍</h1>
+  </header>
+  <nav>
+    <div id="nav-search-wrapper" class="nav-wrapper nav-search-wrapper">
+      <form action="#" id="nav-search" name="nav-search">
+        <label for="search-input">
+          <input type="text" id="search-input" name="search-input" placeholder="검색어를 입력하세요">
+        </label>
+        <label for="search-submit">
+          <input type="submit" id="search-submit" name="search-submit" value="검색">
+        </label>
+      </form>
+    </div>
+
+    <!--
+      div.nav-wrapper-wrapper 는 레이아웃 후에 확인하게된 문제 요구사항을 만족하기 위해 새로 도입하였습니다.
+    -->
+    <div id="nav-login-wrapper-wrapper" class="nav-wrapper-wrapper">
+      <div id="nav-login-wrapper" class="nav-wrapper nav-login-wrapper">
+        <form action="#" id="nav-login" name="nav-login">
+          <fieldset>
+            <div class="nav-login-section nav-login-root">
+              <div class="nav-login-section nav-login-left">
+                <label for="nav-login__username">
+                  <input type="text" id="nav-login__username" name="nav-login__username" placeholder="아이디">
+                </label>
+                <label for="nav-login__password">
+                  <input type="password" id="nav-login__password" name="nav-login__password" placeholder="비밀번호">
+                </label>
+              </div>
+              <div class="nav-login-section nav-login-right">
+                <label for="nav-login__login">
+                  <input type="submit" id="nav-login__login" name="nav-login__login" value="로그인">
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <aside class="ad">
+      <h2 class="ad-title">광고</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, mollitia dolor! Deserunt maiores esse molestiae, exercitationem quia accusamus, ab consequatur quae in vero fugit, autem incidunt nesciunt! Iusto, cum maiores.</p>
+    </aside>
+    <section class="content">
+      <h2 class="content-title">뉴스</h2>
+      <div class="content-root news">
+        <div class="content-body news news-row">
+          <h3>뉴스 제목 1</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore reiciendis exercitationem veritatis at voluptates iusto quibusdam aperiam tenetur ab, repellat sunt illum eveniet est repudiandae autem, tempora eum facilis quis!</p>
+        </div>
+        <div class="content-body news news-row">
+          <h3>뉴스 제목 2</h3>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt, officia? Veniam voluptatum repellendus, odio eaque, impedit deserunt cumque quasi non eos harum molestias sit nam voluptatibus odit consectetur dolore fugiat.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-wrapper">
+      <p>&copy; 2025 포털 메인 페이지. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

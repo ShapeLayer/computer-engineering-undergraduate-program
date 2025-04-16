@@ -1,0 +1,69 @@
+<!--
+  Requirements:
+  - assets/Magic_Deck.png https://static.wikia.nocookie.net/balatrogame/images/c/c3/Magic_Deck.png/revision/latest
+  - assets/Nebula_Deck.png https://static.wikia.nocookie.net/balatrogame/images/1/12/Nebula_Deck.png/revision/latest
+  - assets/Ghost_Deck.png https://static.wikia.nocookie.net/balatrogame/images/a/a1/Ghost_Deck.png/revision/latest
+  - assets/Erratic_Deck.png https://static.wikia.nocookie.net/balatrogame/images/1/17/Erratic_Deck.png/revision/latest
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>214823 박종현</title>
+  <style>
+    *:root {
+      --card-width: 142px;
+      --card-height: 190px;
+    }
+    #card-root {
+      position: relative;
+      width: 400px;
+      height: 300px;
+    }
+    #card-root .card {
+      position: absolute;
+      width: var(--card-width);
+      height: var(--card-height);
+      border: 2px solid black;
+      border-radius: .25em;
+      background-color: white;
+    }
+    #card-1 {
+      left: 200px;
+      top: 10px;
+      z-index: 0;
+    }
+    #card-2 {
+      left: 230px;
+      top: 40px;
+      z-index: 10;
+      border-width: 3px !important;
+    }
+    #card-3 {
+      left: 120px;
+      top: 70px;
+      z-index: 20;
+    }
+    #card-4 {
+      left: 320px;
+      top: 70px;
+      z-index: 30;
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <div>
+      <h3>Z-index</h3>
+      <hr />
+    </div>
+    <div id="card-root">
+      <img id="card-1" class="card erratic" src="./assets/Erratic_Deck.png" alt="">
+      <img id="card-2" class="card ghost" src="./assets/Ghost_Deck.png" alt="">
+      <img id="card-3" class="card magic" src="./assets/Magic_Deck.png" alt="">
+      <img id="card-4" class="card nebula" src="./assets/Nebula_Deck.png" alt="">
+    </div>
+  </section>
+</body>
+</html>
