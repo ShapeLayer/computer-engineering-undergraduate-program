@@ -1,5 +1,6 @@
 name = "고급프로그래밍및실습"
 code = "CIS2006"
+course = [2, 2]
 opened_at = [2024, 2]
 prof = "원용관"
 dept = "컴퓨터정보통신공학과"

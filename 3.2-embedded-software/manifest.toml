@@ -1,5 +1,6 @@
 name = "임베디드소프트웨어"
 code = "ECE3088"
+course = [3, 2]
 opened_at = [2024, 2]
 prof = "김명진"
 dept = "컴퓨터정보통신공학과"

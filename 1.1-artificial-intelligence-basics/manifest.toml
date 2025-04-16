@@ -1,5 +1,6 @@
 name = "인공지능기초"
 code = "CLT0961"
+course = [1, 1]
 opened_at = [2024, 11]
 prof = "김경백"
 dept = "인공지능학부"

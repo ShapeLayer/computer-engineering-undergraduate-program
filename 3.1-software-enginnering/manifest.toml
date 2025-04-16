@@ -1,5 +1,6 @@
 name = "소프트웨어공학론"
 code = "CIS3030"
+course = [3, 1]
 opened_at = [2024, 1]
 prof = "김미수"
 dept = "소프트웨어공학과"

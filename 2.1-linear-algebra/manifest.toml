@@ -1,5 +1,6 @@
 name = "선형대수학"
 code = "ECE2011"
+course = [2, 1]
 opened_at = [2024, 1]
 prof = "박호성"
 dept = "컴퓨터정보통신공학과"

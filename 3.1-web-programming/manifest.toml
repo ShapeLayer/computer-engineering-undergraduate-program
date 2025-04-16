@@ -1,5 +1,6 @@
 name = "웹프로그래밍"
 code = "ECE9063"
+course = [3, 1]
 opened_at = [2025, 1]
 prof = "김명진"
 dept = "컴퓨터정보통신공학과"

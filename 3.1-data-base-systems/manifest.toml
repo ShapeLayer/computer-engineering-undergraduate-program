@@ -1,5 +1,6 @@
 name = "데이터베이스시스템"
 code = "CIS3031"
+course = [3, 1]
 opened_at = [2025, 1]
 prof = "유선용"
 dept = "컴퓨터정보통신공학과"

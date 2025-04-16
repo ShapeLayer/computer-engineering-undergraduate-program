@@ -1,5 +1,6 @@
 name = "기계학습"
 code = "CPE9020"
+course = [4, 1]
 opened_at = [2025, 1]
 prof = "이재열"
 dept = "산업공학과"

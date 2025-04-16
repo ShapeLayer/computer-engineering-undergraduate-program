@@ -26,17 +26,17 @@ def write_readme_each_directories(manifests: dict[str, Manifest]):
         with open(join(dir, 'README.md'), 'w', encoding='utf-8') as f:
             f.write(template.format(summary=manifest.render()))
 
-rs_each_lecture_summary = ' * [`{code}`] [{name}({prof}, {opened_at})]({path}) @{dept}'
+rs_each_lecture_summary = ' * [`{code}`] [{name}({prof}, {course})]({path}) @{dept}'
 def write_root_summary_readme(manifests: dict[str, Manifest]):
     template = open('template.md').read() if isfile('template.md') else '{summary}'
     content = []
-    for dir in sorted(manifests):
+    for dir in sorted(manifests, key=lambda each: manifests[each].course):
         manifest = manifests[dir]
         content.append(
             rs_each_lecture_summary.format(
                 name=manifest.name,
                 code=manifest.code,
-                opened_at=Manifest.f_opened_at(manifest.opened_at),
+                course=Manifest.f_course(manifest.course),
                 prof=manifest.prof,
                 dept=manifest.dept,
                 path=f'./{dir}'
