@@ -52,7 +52,7 @@ class Manifest:
         return Manifest.output_template.format(
             name=self.name,
             code=self.code,
-            course=self.course,
+            course=Manifest.f_course(self.course),
             opened_at=Manifest.f_opened_at(self.opened_at),
             prof=self.prof,
             dept=self.dept
