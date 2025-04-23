@@ -8,8 +8,8 @@
 
 ### 교수
 
-| 교수번호<br>`char[]`\* | 이름<br>`char[]` | 학과`char[]` | 연락처`char[]` | 이메일`char[]` |
-| :-: | :-: | :-: | :-: | :-: |
+| 교수번호<br>`char[]`\* | 이름<br>`char[]`  | 연락처`char[]` | 이메일`char[]` |
+| :-: | :-: | :-: | :-: |
 | 23948200 | Kurokawa Kim | phone:+81-70-9876-1357 | blackriver@yahoo.jp |
 | 89909843 | 유강산 | phone:+82-1101-0110 | rivermt@chonnam.ac.kr |
 | 32084001 | 고수달 | phone:+82-8123-1234 | littleotter123@jnu.ac.kr |
