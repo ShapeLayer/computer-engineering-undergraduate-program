@@ -18,7 +18,7 @@ Computer Enginnering Undergraduate Program @ Chonnam National University
  * [`CIS2001`] [운영체제(박태준, 3학년 1학기)](./3.1-operating-system) @소프트웨어공학과
  * [`CIS3030`] [소프트웨어공학론(김미수, 3학년 1학기)](./3.1-software-enginnering) @소프트웨어공학과
  * [`ECE9063`] [웹프로그래밍(김명진, 3학년 1학기)](./3.1-web-programming) @컴퓨터정보통신공학과
- * [`ECE3087`] [컴퓨터공학프로젝트1(캡스톤디자인)(박수형, 박호성, 3학년 2학기)](./3.2-computer-engineering-project1(capstone-design)) @컴퓨터정보통신공학과
+ * [`ECE3087`] [컴퓨터공학종합프로젝트1(캡스톤디자인)(박수형, 박호성, 3학년 2학기)](./3.2-computer-engineering-project1(capstone-design)) @컴퓨터정보통신공학과
  * [`ECE3088`] [임베디드소프트웨어(김명진, 3학년 2학기)](./3.2-embedded-software) @컴퓨터정보통신공학과
  * [`ECE4086`] [컴퓨터공학종합프로젝트2(캡스톤디자인)(박수형, 박호성, 4학년 1학기)](./4.1-computer-engineering-project2(capstone-design)) @컴퓨터정보통신공학과
  * [`CIS3012`] [분산시스템(김경백, 4학년 1학기)](./4.1-distributed-systems) @인공지능학부 소프트웨어전공
