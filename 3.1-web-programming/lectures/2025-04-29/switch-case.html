@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  let price = undefined;
+  let coffee = prompt('Input a type of coffee: ')
+  switch(coffee) {
+    case 'espresso':
+    case '에스프레소':
+      price = 2000
+      break
+    case '카푸치노':
+      price = 3000
+      break
+    case '카페라떼':
+      price = 3500
+      break
+    default:
+      document.write(coffee + ' is not exists in available list.')
+  }
+  if (price !== undefined) {
+    document.write(coffee + ' requires ' + price + ' coins.')
+  }
+</script>
+</body>
+</html>

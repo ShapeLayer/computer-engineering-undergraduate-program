@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  let x
+  function f() {
+    let y
+    x = 10 /* 전역 */, y = 20 /* 지역(let y) */, z = 30 /* 새로 전역 변수 z 선언됨 */
+    if (y == 20) {
+      let b = 40
+      b++
+      document.write('if 블록 내 블록 변수 b = ' + b + '<br />')
+    }
+    document.write('함수 y() 내 지역변수 y = ' + y + '<br />')
+  }
+  f()
+  document.write('전역변수 x = ' + x + '<br />')
+  document.write('지역변수 z = ' + z)
+  // 변수 x, z만 접근 가능
+  document.write(y)
+  document.write(b)
+</script>
+</body>
+</html>
