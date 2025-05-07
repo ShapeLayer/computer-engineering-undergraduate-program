@@ -46,10 +46,12 @@ void setup() {
     pinMode(i, OUTPUT);
     digitalWrite(i, LOW);
   }
+  pinMode(PIN_PUSH_BTN, INPUT_PULLUP);
   Serial.begin(9600);
   while (!Serial);
   key_state = new_key_state();
   update_last_changed(key_state, micros());
+  OUT_SEG(get_pin_segement(button_pushed % seg_length));
 }
 
 void loop() {
