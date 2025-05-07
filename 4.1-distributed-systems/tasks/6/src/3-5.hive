@@ -1,0 +1,59 @@
+create table test_partition (name string, salary int) partitioned by (year int, month int) row format delimited fields terminated by ',';
+describe test_partition;
+alter table test_partition add partition (year = 2023, month = 11) partition (year = 2023, month = 12);
+show partitions test_partition;
+
+
+alter table test_partition add partition (year=2024, month=01);
+show partitions test_partition;
+
+alter table test_partition drop if exists partition (year=2023);
+show partitions test_partition;
+
+alter table test_partition add partition (year=2023, month=12);
+show partitions test_partition;
+
+
+dfs -ls /user/hive/warehouse/test_partition;
+dfs -ls /user/hive/warehouse/test_partition/year=2023;
+dfs -ls /user/hive/warehouse/test_partition/year=2023/month=12;
+select * from test_partition;
+
+
+load data local inpath '/home/hduser/hive_test/data/test.dat'
+overwrite into table test_partition partition (year=2023, month=12);
+
+select * from test_partition;
+
+load data local inpath '/home/hduser/hive_test/data/test1.dat'
+overwrite into table test_partition partition (year=2024, month=01);
+
+select * from test_partition;
+select * from test_partition where year=2023;
+
+
+create table test_buckets (name string, salary int) clustered by (salary) into 2 buckets;
+dfs -ls /user/hive/warehouse/test_buckets;
+
+insert overwrite table test_buckets select * from test;
+
+
+select * from test_buckets;
+select * from test;
+
+dfs -ls /user/hive/warehouse/test_buckets;
+dfs -cat /user/hive/warehouse/test_buckets/000000_0;
+dfs -cat /user/hive/warehouse/test_buckets/000001_0;
+
+
+create view test_view as select salary, name from test;
+create table test_temp as select * from test;
+create view test_temp_view as select * from test_temp where salary > 1300;
+select * from test_temp_view;
+
+
+alter table test_temp change replace (name string);
+select * from test_temp;
+select * from test_temp_view;
+drop view test_temp_view;
+drop table test_temp;

@@ -1,0 +1,48 @@
+drop table test_external;
+
+create table if not exists test_external (name string, salary int)
+comment 'external table' row format delimited fields
+terminated by ',' stored as textfile location '/output';
+load data local inpath '/home/hduser/hive_test/data/test1.dat' overwrite into table test_external;
+Select * from test_external;
+
+
+create table test1_copy like test_external;
+select * from test1_copy;
+load data inpath '/output/test1.dat' overwrite into table test1_copy;
+select * from test1_copy;
+select * from test_external;
+
+-- in shell:
+-- $ hdfs dfs -put ~/hive_test/data/test1.dat /output;
+select * from test_external;
+
+
+create table test_insert like test_partition;
+select * from test_insert;
+select * from test_partition where year=2023;
+insert into table test_insert select * from test_partition where year=2023;
+insert into table test_insert select * from test_partition where year=2023;
+
+
+insert into table test_insert select * from test_partition where year=2024;
+insert overwrite table test_insert select * from test_partition where year=2024;
+insert overwrite table test_insert select * from test_partition where year=2023;
+
+
+select * from test order by name;
+select * from test order by salary desc;
+
+
+select * from test sort by name;
+set mapred.reduce.tasks = 2;
+select * from test sort by name;
+set mapred.reduce.tasks = 1;
+select * from test sort by name;
+
+
+select * from test_partition distribute by year;
+select * from test_partition distribute by year sort by salary;
+
+
+select * from test_partition cluster by salary;
