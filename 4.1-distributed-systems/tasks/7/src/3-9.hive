@@ -1,0 +1,23 @@
+select sum(salary) over () as avg_salary from testdata;
+select avg(salary) over (), min(salary) over (), max(salary) over() from testdata limit 1;
+
+
+
+select name, salary, projects, avg(salary) over () as avg_salary,
+  rank() over (order by salary desc) as rank,
+  percent_rank() over (order by salary desc) as prank
+from testdata;
+
+select name, salary, projects,
+  avg(salary) over (partition by projects[0]) as avg_salary,
+  rank() over (partition by projects[0] order by salary desc) as rank,
+  percent_rank() over (partition by projects[0] order by salary desc) as prank
+from testdata;
+
+
+
+explain select name, salary, projects,
+  avg(salary) over (partition by projects[0]) as avg_salary,
+  rank() over (partition by projects[0] order by salary desc) as rank,
+  percent_rank() over (partition by projects[0] order by salary desc) as prank
+from testdata;
