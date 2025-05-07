@@ -1,0 +1,64 @@
+# 7
+create table testdata
+(
+  name string,
+  salary int,
+  sex_age struct<sex:string, age:int>,
+  skill_score map<string,int>,
+  projects array<string>
+)
+row format delimited
+fields terminated by ','
+collection items terminated by '-'
+map keys terminated by ':';
+
+
+# 8
+load data local inpath '/home/hduser/hive_test/data/testdata.dat' overwrite into table testdata;
+select * from testdata;
+
+select name, projects from testdata;
+select name, projects[0], projects[1] from testdata;
+
+select name, sex_age from testdata;
+select name, sex_age.age from testdata;
+
+select name, skill_score from testdata;
+select name, skill_score['db'] as db, skill_score['python'] as python from testdata;
+
+
+# 9
+select * from test;
+select name from test;
+select name from test limit 2;
+select distinct name from test;
+select name from test where salary > 1000;
+
+
+# 10
+with t1 as (select * from test_partition where year=2023) select * from t1;
+select * from (select * from test_partition where year=2023) t1;
+
+
+# 11
+create table test_join (name string, id int) row format delimited fields terminated by ',';
+load data local inpath '/home/hduser/hive_test/data/test_join.dat' overwrite into table test_join;
+select * from test_join;
+
+
+# 12
+set hive.auto.convert.join=false;
+select t1.*, t2.id from test t1 join test_join t2 on t1.name = t2.name;
+select t1.*, t2.id from test t1, test_join t2 where t1.name = t2.name;
+select t1.name, t2.id, t3.year from test t1 join test_join t2 on t1.name=t2.name join test_partition t3 on t1.name = t3.name;
+
+
+# 13
+select t1.*, t2.* from test_join t1 left join test_partition t2 on t1.name = t2.name;
+select t2.*, t1.* from test_partition t1 left join test_join t2 on t1.name = t2.name;
+
+select t1.*, t2.* from test_join t1 right join test_partition t2 on t1.name = t2.name;
+
+select t1.*, t2.* from test_join t1 full join test_partition t2 on t1.name = t2.name;
+
+select t1.*, t2.* from test_join t1 cross join test_partition t2;
