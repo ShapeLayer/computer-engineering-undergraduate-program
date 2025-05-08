@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let current = new Date()
+    setInterval(() => {
+      document.body.innerHTML = ""
+      
+      current = new Date()
+      if (current.getSeconds() % 2 == 0) {
+        document.body.style.backgroundColor = "yellow"
+      } else {
+        document.body.style.backgroundColor = "lightskyblue"
+      }
+      
+      document.write(
+      "현재 시간 : " +
+      current.getHours() + "시, " +
+      current.getMinutes() + "분, " +
+      current.getSeconds() + "초" +
+      "<br>"
+    )
+    }, 1000)
+  </script>
+</body>
+</html>
