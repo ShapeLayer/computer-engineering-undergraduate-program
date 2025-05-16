@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body onclick="document.write('<h3>clicked</h3>')">
+  wrong usage
+
+  클릭하면 본문 전체가 사라짐:
+  onclick 이벤트가 웹 페이지 로드 후 이벤트 발생
+  그래서 document.write()가 호출되면
+  현재 문서가 지워지고 새 문서가 생성됨
+
+</body>
+</html>

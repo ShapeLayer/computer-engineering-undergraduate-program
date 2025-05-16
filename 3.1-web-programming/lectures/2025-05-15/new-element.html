@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h3>Make new element</h3>
+  <hr>
+  <button onclick="createDov()">Create new div</button>
+  <div id="parent">
+    <p>this is a parent element</p>
+  </div>
+  <script>
+    const target = document.getElementById("parent")
+
+    const createDov = () => {
+      const newDiv = document.createElement("div")
+      newDiv.innerHTML = "<p>my new awesome div</p>"
+      newDiv.style.color = "blue"
+      newDiv.style.fontSize = "20px"
+      newDiv.style.border = "3px solid red"
+      newDiv.onclick = (e) => {
+        let ele = e.target
+        let p = ele.parentElement
+        p.removeChild(ele)
+        console.log(p, ele)
+        /*
+          In this newDiv code, child element `p` has been generated.
+          If `p` has been clicked, click event will be fired on `p`
+          instead of `newDiv`.
+          In this case, removing target is `p` not `newDiv`, remaining
+          `newDiv`.
+        */
+      }
+      target.appendChild(newDiv)
+    }
+  </script>
+</body>
+</html>
