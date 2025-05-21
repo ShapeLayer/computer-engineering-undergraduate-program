@@ -6,9 +6,9 @@ tar xvfz hbase-2.6.1-bin.tar.gz
 
 
 echo 'export HBASE_HOME=/home/hduser/hbase_test/hbase-2.6.1' >> ~/.bashrc
-echo 'PATH=$HBASE_HOME/bin:$PATH' >> ~/.bashrc
+echo 'export PATH=$HBASE_HOME/bin:$PATH' >> ~/.bashrc
 
-echo 'export JAVA_HOME=$(readlink -f /usr/bin/java | sed"s:bin/java::")' >> $HBASE_HOME/conf/hbase-env.sh
+echo 'export JAVA_HOME=$(readlink -f /usr/bin/java | sed"s:bin/java::")' >> $HBASE_HOME/conf/hbase-env.sh 
 
 
 

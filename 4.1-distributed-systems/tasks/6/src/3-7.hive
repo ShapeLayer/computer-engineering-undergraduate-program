@@ -1,10 +1,11 @@
+-- 3
 select count(*) as cnt from testdata;
 select sex_age.sex, count(*) as cnt from testdata group by sex_age.sex;
 select sex_age.sex, avg(sex_age.age) as avg_age, count(*) as cnt from testdata group by sex_age.sex;
 select sex_age.sex, collect_set(sex_age.age), count(*) as cnt from testdata group by sex_age.sex;
 
 
-
+-- 4
 select sum(
   case when sex_age.sex='male' then sex_age.age else 0 end
 ) / count(
@@ -18,7 +19,7 @@ select sum(
 ) as male_age_avg from testdata;
 
 
-
+-- 5
 select sex_age.sex, projects[0], avg(salary) as avg_salary
 from testdata group by sex_age.sex, projects[0]
 grouping sets ( (sex_age.sex, projects[0]) );
@@ -32,7 +33,7 @@ from testdata group by sex_age.sex, projects
 grouping sets ( (sex_age.sex, projects) );
 
 
-
+-- 6
 select sex_age.sex, projects[0], avg(salary) as avg_salary
 from testdata group by sex_age.sex, projects[0] with rollup;
 
@@ -40,7 +41,7 @@ select sex_age.sex, projects[0], avg(salary) as avg_salary
 from testdata group by sex_age.sex, projects[0] with cube;
 
 
-
+# 7
 export table testdata to '/output/test_insert';
 import table testdata_import from '/output/test_insert';
 import external table testdata_import_external

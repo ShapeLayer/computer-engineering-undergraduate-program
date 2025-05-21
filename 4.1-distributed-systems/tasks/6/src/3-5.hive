@@ -52,7 +52,7 @@ create view test_temp_view as select * from test_temp where salary > 1300;
 select * from test_temp_view;
 
 
-alter table test_temp change replace (name string);
+alter table test_temp replace columns (name string);
 select * from test_temp;
 select * from test_temp_view;
 drop view test_temp_view;
