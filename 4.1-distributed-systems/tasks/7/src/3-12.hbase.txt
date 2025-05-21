@@ -1,34 +1,34 @@
 # Page 6
-Create 'testdata', 'cf1', 'cf2'
-Put 'testdata', 'rowA', 'cf1:A', 'val1'
-Put 'testdata', 'rowB', 'cf1:B', 'val2'
-Put 'testdata', 'rowC', 'cf2:C', 'val3'
-Put 'testdata', 'rowA', 'cf2:B', 'val4'
-Scan 'testdata'
+create 'testdata', 'cf1', 'cf2'
+put 'testdata', 'rowA', 'cf1:A', 'val1'
+put 'testdata', 'rowB', 'cf1:B', 'val2'
+put 'testdata', 'rowC', 'cf2:C', 'val3'
+put 'testdata', 'rowA', 'cf2:B', 'val4'
+scan 'testdata'
 
 
 
 # Page 7
-Put 'testdata', 'rowA', 'cf1:A', 'val5'
-Scan 'testdata'
-Delete 'testdata', 'rowA', 'cf1:a'
-Scan 'testdata'
+put 'testdata', 'rowA', 'cf1:A', 'val5'
+scan 'testdata'
+delete 'testdata', 'rowA', 'cf1:a'
+scan 'testdata'
 
 
 
 # Page 8
-Alter 'testdata', 'delete' => 'cf2'
-Scan 'testdata'
-Alter 'testdata', 'cf2'
-Scan 'testdata'
+alter 'testdata', 'delete' => 'cf2'
+scan 'testdata'
+alter 'testdata', 'cf2'
+scan 'testdata'
 
 
 
 # Page 9
-Put 'testdata', 'rowA', 'cf1:A', 'val5'
-Put 'testdata', 'rowC', 'cf2:C', 'val3'
-Put 'testdata', 'rowA', 'cf2:B', 'val4'
-Scan 'testdata'
-Deleteall'testdata', 'rowA'
-Scan 'testdata'
-Truncate 'testdata'
+put 'testdata', 'rowA', 'cf1:A', 'val5'
+put 'testdata', 'rowC', 'cf2:C', 'val3'
+put 'testdata', 'rowA', 'cf2:B', 'val4'
+scan 'testdata'
+deleteall 'testdata', 'rowA'
+scan 'testdata'
+truncate 'testdata'

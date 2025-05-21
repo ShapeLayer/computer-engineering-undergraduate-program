@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  const onClickHandler = () => {
+    const spans = document.getElementsByTagName("span")
+
+    for (let span of spans) {
+      span.style.color = "orchid"
+      span.style.fontSize = "20px"
+    }
+  }
+</script>
+<button onclick="onClickHandler()"> click this </button>
+Lorem ipsum dolor <span>sit amet consectetur</span> adipisicing elit. Quibusdam quo iusto nulla aspernatur tempore, deserunt, cum veritatis at quisquam nemo odio. Sed iure cupiditate a, libero porro in tenetur repellendus!
+Lorem <span>ipsum dolor</span> sit amet consectetur adipisicing elit. Cumque animi provident temporibus quae porro officia repellat omnis et fuga neque! Ea, repellendus iste deleniti pariatur placeat eum enim itaque beatae?
+Lorem ipsum dolor sit amet consectetur <span>adipisicing</span> elit. Ab eos iure atque possimus praesentium error. Atque libero repellendus aliquam inventore, dolorem iste iure modi animi repellat, a corporis tempora delectus?
+</body>
+</html>

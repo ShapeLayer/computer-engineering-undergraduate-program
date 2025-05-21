@@ -8,7 +8,6 @@ hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.separator="," -Dim
 echo "create 'employees_copy', 'personal', 'department'" | hbase shell
 hbase org.apache.hadoop.hbase.mapreduce.CopyTable --new.name=employees_copy employees
 
-
 # Page 11
 hbase org.apache.hadoop.hbase.mapreduce.Export employees /output/employees
 echo "create 'employees_import', 'personal', 'department'" | hbase shell

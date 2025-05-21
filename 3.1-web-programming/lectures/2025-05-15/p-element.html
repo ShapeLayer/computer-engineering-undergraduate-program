@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<p id="firstP" class="first-class second-class" onclick="this.style.color = 'teal'">
+  This is a paragraph.
+</p>
+<script>
+  let p = document.getElementById("firstP")
+  let text = "p.id = " + p.id + "\n"
+  text += "p.className = " + p.className + "\n"
+  text += "p.innerHTML = " + p.innerHTML + "\n"
+  text += "p.innerText = " + p.innerText + "\n"
+  text += "p.textContent = " + p.textContent + "\n"
+  text += "p.onclick = " + p.onclick + "\n"
+  alert(text)
+</script>
+</body>
+</html>

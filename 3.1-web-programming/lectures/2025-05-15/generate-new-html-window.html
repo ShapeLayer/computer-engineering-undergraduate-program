@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h3>Make HTML Document</h3>
+  <hr>
+  <textarea name="src-text" id="src-text"></textarea>
+  <button onclick="showHTML()">submit</button>
+  <script>
+    const srcText = document.getElementById("src-text")
+    let win
+    const showHTML = () => {
+      if (win === null || win === undefined || win.closed) {
+        win = window.open("", "outWin", "width=600, height=400")
+      }
+      win.document.open()
+      win.document.write(srcText.value)
+      win.document.close()
+    }
+  </script>
+</body>
+</html>
