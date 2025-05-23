@@ -1,0 +1,84 @@
+@startchen
+left to right direction
+
+entity "학생" as student {
+  학번 <<key>>
+  이름
+  생년월일
+  학년
+  학과
+  연락처
+  이메일
+}
+
+entity "교수" as professor {
+  교수번호 <<key>>
+  이름
+  학과
+  연락처
+  이메일
+}
+
+entity "강의" as lecture {
+  강의코드 <<key>>
+  강의명
+  강의실번호
+  담당교수번호
+}
+
+entity "강의실" as room {
+  강의실번호 <<key>>
+  건물명
+  수용인원
+}
+
+relationship "강의 진행" as doLecture {
+}
+
+doLecture -1- lecture
+doLecture -1- room
+
+relationship "수업" as teach {
+}
+
+teach =1= professor
+teach -N- lecture
+
+
+entity "성적" as grade {
+  성적번호 <<key>>
+  수강신청번호
+  중간고사 점수
+  기말고사 점수
+  과제 점수
+  출석 점수
+  최종 성적
+}
+
+relationship "강의평가" as lectureRating {
+  평가번호 <<key>>
+  수강신청번호
+  만족도 점수
+  피드백 내용
+}
+
+lectureRating -1- student
+lectureRating -N- lecture
+
+relationship "수강신청" as assign {
+  신청번호 <<key>>
+  학번
+  강의코드
+  신청일자
+}
+
+assign =1= student
+assign =N= lecture
+
+relationship "평가" as exam {
+}
+
+exam -1- grade
+exam -1- lecture
+
+@endchen
