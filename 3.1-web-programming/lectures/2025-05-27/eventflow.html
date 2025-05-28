@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p id="div"></p>
+  <p id="button">#button</p>
+  <script>
+    const div = document.getElementById('div')
+    const button = document.getElementById('button')
+
+
+    const capture = (e) => {
+      const element = e.currentTarget
+      const tagName = element.tagName
+      div.innerHTML += '<br capture 단계: ' + tagName + ' ' + e.target.tagName + ' ' + e.type
+    }
+
+    const bubble = (e) => {
+      const element = e.currentTarget
+      const tagName = element.tagName
+      div.innerHTML += '<br bubble 단계: ' + tagName + ' ' + e.target.tagName + ' ' + e.type
+      console.log('bubble', tagName, e.target.tagName, e.type)
+    }
+
+    document.body.addEventListener('click', capture, true)
+    button.addEventListener('click', bubble, false)
+    document.body.addEventListener('click', bubble, false)
+
+  </script>
+</body>
+</html>

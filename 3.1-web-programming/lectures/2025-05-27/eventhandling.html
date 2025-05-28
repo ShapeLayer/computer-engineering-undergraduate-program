@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    const query = () => {
+      return confirm("네이버로 이동하시겠습니까?")
+    }
+  </script>
+</head>
+<body>
+  <a href="https://www.naver.com" onclick="return query()">https://www.naver.com</a>
+  <input type="checkbox" onclick="event.preventDefault()"> 
+</body>
+</html>

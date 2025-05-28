@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    const onOver = (event) => {
+      event.target.style.backgroundColor = 'orchid';
+    }
+    const onOut = (event) => {
+      event.target.style.backgroundColor = 'white';
+    }
+
+    const init = () => {
+      p = document.getElementById('p')
+      p.onmouseover = onOver
+      p.onmouseout = onOut
+
+      p2 = document.getElementById('p2')
+      p2.addEventListener('mouseover', onOver)
+      p2.addEventListener('mouseout', onOut)
+
+      p3 = document.getElementById('p3')
+      p3.addEventListener('mouseover', (event) => {
+        event.target.style.backgroundColor = 'orchid'
+      })
+      p3.addEventListener('mouseout', (event) => {
+        event.target.style.backgroundColor = 'white'
+      })
+
+      const descriptEvent = (event) => {
+        console.log(event.type, event.target.id);
+      }
+      window.descriptEvent = descriptEvent;
+    }
+  </script>
+</head>
+<body onload="init()">
+  <p onmouseover="this.style.backgroundColor='orchid'"
+     onmouseout="this.style.backgroundColor='white'"
+  >hover this</p>
+  <p id="p">asdf</p>
+  <p id="p2">hover this</p>
+  <p id="p3">asdf</p>
+  <p id="hover-or-click" onmouseover="descriptEvent(event)" onclick="descriptEvent(event)">hover-or-click</p>
+</body>
+</html>
