@@ -36,6 +36,12 @@
     }
   </script>
 </head>
+<!--<body onclick="document.write('<h3>Clicked</h3>')">-->
+<!--
+  document 렌더링 후 document가 닫힘
+  이후에 onclick 이벤트가 발생하여도 이미 작성된 문서에 write할 수 없으므로
+  새로 생성하게 됨
+-->
 <body onload="init()">
   <p onmouseover="this.style.backgroundColor='orchid'"
      onmouseout="this.style.backgroundColor='white'"
