@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>214823_박종현</title>
+</head>
+<body onload="onInit()">
+  <h2>수식 계산</h2>
+  <hr />
+  <div id="out"></div>
+  <script type="text/javascript">
+    const queryExpr = () => {
+      return prompt('수식 입력');
+    }
+
+    class InvalidExpressionError extends Error {
+      constructor(message) {
+        super(message);
+        this.name = 'InvalidExpressionError';
+      }
+    }
+    
+    const evaluateExpr = (exprStr) => {
+      const evaluated = eval(exprStr);
+      if (isNaN(evaluated)) {
+        throw new InvalidExpressionError();
+      }
+      return evaluated;
+    }
+
+    const buildResult = (exprStr, evaluated) => {
+      return `<p>${exprStr} = ${evaluated}</p>`;
+    }
+
+    const onInit = () => {
+      const out = document.getElementById('out');
+      let exprStr = queryExpr();
+      let evaluated;
+
+      while (true) {
+        try {
+          evaluated = evaluateExpr(exprStr);
+          break;
+        } catch (e) {
+          if (e instanceof InvalidExpressionError) {}
+        }
+      }
+
+      out.innerHTML = buildResult(exprStr, evaluated);
+    }
+  </script>
+</body>
+</html>

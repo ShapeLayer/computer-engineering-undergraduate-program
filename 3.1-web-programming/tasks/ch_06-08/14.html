@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>자바스크립트 연습</title>
+  <script>
+    const a = () => {
+      const idsel1Ele = document.querySelector('#idsel1');
+      idsel1Ele.style.color = 'blue';
+      idsel1Ele.style.fontWeight = 'bold';
+      const idsel2Ele = document.querySelector('#idsel2');
+      idsel2Ele.style.color = 'green';
+      idsel2Ele.style.fontWeight = 'bold';
+    }
+    const b = () => {
+      const classselEle = document.querySelectorAll('.classsel');
+      for (let each of classselEle) {
+        each.style.color = 'red';
+      }
+    }
+  </script>
+</head>
+<body onload="b()">
+  <h3>
+    프로그래밍 언어
+    <button onclick="a()">Color</button>
+  </h3>
+  <hr>
+  <p><span class="classsel">자바스크립트</span></p>
+  <p><span id="idsel1">C언어</span></p>
+  <p><span class="classsel">JAVA</span></p>
+  <p><span class="classsel">Python</span></p>
+  <p><span id="idsel2">C++</span></p>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>214823_박종현</title>
+</head>
+<body onload="onInit()">
+  <h2>일주일의 계획표</h2>
+  <hr />
+  <div id="out"></div>
+  <script type="text/javascript">
+    const queryDate = () => {
+      let gets;
+      while (true) {
+        gets = prompt('월화수목금토일 중에서 입력하세요');
+        if (gets.length === 1 && '월화수목금토일'.includes(gets)) {
+          return gets;
+        }
+      }
+    }
+
+    const buildPlanDOMStr = (day) => {
+      if (day.length !== 1) { throw new Error(); }
+      if ('월화수목금토일'.includes(day) === false) { throw new Error(); }
+
+      const dailyPlan = {
+        day: day,
+        isAttendance: '월화수목'.includes(day),
+        isRest: '토일'.includes(day),
+        meetingExsits: day === '금',
+        is1stStarts: '화목'.includes(day)
+      };
+
+      const strBuf = [];
+      strBuf.push(`${day}요일 일정`);
+      if (dailyPlan.isAttendance === true) { strBuf.push('등교'); }
+      if (dailyPlan.meetingExsits === true) { strBuf.push('신나는 회의'); }
+      if (dailyPlan.isRest === true) { strBuf.push('휴식'); }
+      if (dailyPlan.is1stStarts === true) { strBuf.push('1교시입니다.'); }
+
+      return strBuf.join('<br>');
+    }
+
+    const onInit = () => {
+      const out = document.getElementById('out');
+      let htmlStr = buildPlanDOMStr(
+        queryDate()
+      );
+      out.innerHTML = `<p>${htmlStr}</p>`;
+    }
+  </script>
+</body>
+</html>

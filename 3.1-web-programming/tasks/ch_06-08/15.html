@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>z-index 스타일 프로퍼티</title>
+  <style>
+    div {
+      position: absolute;
+    }
+    img {
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <h3>z-index</h3>
+  <hr>
+  <div>
+    <img src="spade.jpg" width="100" height="140" alt="스페이드">
+    <img src="heart.png" width="100" height="140" alt="하트">
+    <img src="clover.jpg" width="100" height="140" alt="클로버">
+    <img src="dia.png" width="100" height="140" alt="다이아">
+  </div>
+  <script>
+    let bottom = -1;
+    const onClick = (e) => {
+      const target = e.target;
+      e.style.zIndex = bottom--;
+    }
+
+    const cards = document.querySelectorAll('img');
+    for (let i = 0; i < cards.length; i++) {
+      cards[i].style.zIndex = i;
+      cards[i].addEventListener('click', () => {onClick(cards[i])});
+    }
+  </script>
+</body>
+</html>

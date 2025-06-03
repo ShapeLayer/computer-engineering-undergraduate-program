@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>214823_박종현</title>
+  <style>
+    div {
+      display: inline-block;
+      width: 150px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h3>16개의 랜덤한 색 만들기</h3>
+  <hr>
+  <script>
+    /* 나머지 분을 채워 넣으시오 */
+    const genColor = () => Array.from({ length: 3}, () => Math.floor(Math.random() * 256));
+
+    const WIDTH = 4, HEIGHT = 4;
+    for (let i = 0; i < HEIGHT; i++) {
+      for (let j = 0; j < WIDTH; j++) {
+        const color = genColor();
+        const colorStr = `rgb(${color.join(',')})`;
+        document.write(`<div style="background-color: ${colorStr};">${colorStr}</div>`);
+      }
+      document.write('<br>');
+    }
+  </script>
+</body>
+</html>

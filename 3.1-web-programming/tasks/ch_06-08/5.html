@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>214823_박종현</title>
+</head>
+<body onload="onInit()">
+  <h2>문자열 배열 다루기</h2>
+  <hr>
+  <div id="statistics"></div>
+  <hr>
+  <div>
+    <p>이름의 첫글자 별로 분류해서 출력</p>
+    <hr>
+    <div id="grouped"></div>
+  </div>
+  <script type="text/javascript">
+    const getShortest = (names) => {
+      let min = 1e10, content = '';
+      for (let name of names) {
+        if (name.length < min) {
+          min = name.length;
+          content = name;
+        }
+      }
+      return content;
+    }
+
+    const getLongest = (names) => {
+      let max = 0, content = '';
+      for (let name of names) {
+        if (name.length > max) {
+          max = name.length;
+          content = name;
+        }
+      }
+      return content;
+    }
+    
+    const getStats = (names) => {
+      let sorted = names.sort();
+
+      return {
+        origin: names,
+        shortest: getShortest(names),
+        longest: getLongest(names),
+        first: sorted[0],
+        last: sorted[sorted.length - 1],
+        sorted: sorted
+      };
+    }
+
+    const splitByFirstChar = (names) => {
+      const result = {};
+
+      for (let name of names) {
+        const firstChar = name.charAt(0);
+        if (!result[firstChar]) {
+          result[firstChar] = [];
+        }
+        result[firstChar].push(name);
+      }
+
+      return result;
+    }
+
+    const main = (names) => {
+      const statsElement = document.getElementById('statistics');
+      const groupedElement = document.getElementById('grouped');
+
+      const stats = getStats(names);
+      const grouped = splitByFirstChar(names);
+
+      statsElement.innerText = `
+        이름: ${stats.origin.join(' ')}
+        가장 짧은 이름: ${stats.shortest}
+        가장 긴 이름: ${stats.longest}
+        가장 먼저 나오는 이름: ${stats.first}
+        가장 나중에 나오는 이름: ${stats.last}
+        정렬된 이름: ${stats.sorted.join(' ')}
+      `;
+
+      for (const [firstChar, names] of Object.entries(grouped)) {
+        const gen = document.createElement('p');
+        gen.innerText = `이름의 첫글자: ${firstChar}\n${names.join(' ')}`;
+        groupedElement.appendChild(gen);
+        groupedElement.appendChild(document.createElement('hr'));
+      }
+    }
+
+    const onInit = () => {
+      let champion = new Array("tahmkench", "teemo", "yummi", "tryndamere", "yasuo", "heimerdinger", "aurelionsol", "ahri", "aurelionsol", "aphelios")
+
+      main(champion);
+      // main(["박종현", "김원우", "고강건", "안주현", "오정원", "김강산"]);
+    }
+  </script>
+</body>
+</html>

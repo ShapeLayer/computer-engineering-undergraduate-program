@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>214823_박종현</title>
+  <style>
+    div {
+      display: inline-block;
+      width: 60px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h3>15개의 CSS2 색이름과 색</h3>
+  <hr>
+  <script>
+    let colorNames = [
+      "maroon", "red", "orange", "yellow", "olive",
+      "purple", "fuchsia", "white", "lime", "green",
+      "navy", "blue", "aqua", "teal", "black"
+    ];
+
+    /* 나머지 부분을 채워 넣으시오 */
+    for (let i = 0; i < 3; i++) {
+      for (let j = 0; j < 5; j++) {
+        let colorName = colorNames[i * 5 + j];
+        document.write(`<div style="background-color: ${colorName}; color: ${i < 2 ? 'black' : 'red'};">${colorName}</div>`);
+      }
+      document.write('<br>');
+    }
+  </script>
+</body>
+</html>

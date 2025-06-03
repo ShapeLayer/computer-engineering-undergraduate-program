@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>214823_박종현</title>
+</head>
+<body>
+  <hr />
+  <h2>다이아몬드를 그립니다.</h2>
+  <p style="font-family: 'D2Coding', consolas, monospace;">
+    <script>
+      const N = 5;
+      for (let i = 0; i < N; i++) {
+        for (let j = 0; j < N - i - 1; j++) {
+          document.write("&nbsp;");
+        }
+        for (let j = 0; j < 2 * i + 1; j++) {
+          document.write("*");
+        }
+        document.write("<br>");
+      }
+      for (let i = 0; i < N - 1; i++) {
+        for (let j = 0; j < i + 1; j++) {
+          document.write("&nbsp;");
+        }
+        for (let j = 0; j < 2 * (N - i - 1) - 1; j++) {
+          document.write("*");
+        }
+        document.write("<br>");
+      }
+    </script>
+  </p>
+</body>
+</html>

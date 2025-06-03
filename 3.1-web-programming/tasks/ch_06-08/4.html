@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>214823_박종현</title>
+</head>
+<body onload="onInit()">
+  <h2>난수 10개 생성</h2>
+  <hr />
+  <div id="generated"></div>
+  <hr />
+  <div id="minmax"></div>
+  <hr />
+  <div id="sorted"></div>
+  <hr />
+  <div id="odd"></div>
+  <hr />
+  <div id="even"></div>
+  <script type="text/javascript">
+    const genNumbers = (count) => {
+      const numbers = [];
+      for (let i = 0; i < count; i++) {
+        numbers.push(Math.floor(Math.random() * 100));
+      }
+      return numbers;
+    };
+
+    const findMinMax = (numbers) => {
+      return { min: Math.min(...numbers), max: Math.max(...numbers) };
+    };
+
+    const sortNumbers = (numbers) => {
+      return numbers.sort();
+    };
+
+    const getOdd = (numbers) => {
+      return numbers.filter(num => num % 2 !== 0);
+    }
+
+    const getEven = (numbers) => {
+      return numbers.filter(num => num % 2 === 0);
+    };
+
+    const onInit = () => {
+      const generated = document.getElementById('generated');
+      const minmax = document.getElementById('minmax');
+      const sorted = document.getElementById('sorted');
+      const odd = document.getElementById('odd');
+      const even = document.getElementById('even');
+
+      const numbers = genNumbers(10);
+      generated.innerHTML = `<p>${numbers.join(' ')}</p>`;
+      const { min, max } = findMinMax(numbers);
+      minmax.innerHTML = `<p>제일 큰 수는 ${max}<br />제일 작은 수는 ${min}</p>`;
+      sorted.innerHTML = `<p>${sortNumbers(numbers).join(' ')}</p>`;
+      odd.innerHTML = `<p>홀수<br />${getOdd(numbers).join(' ')}</p>`;
+      even.innerHTML = `<p>짝수<br />${getEven(numbers).join(' ')}</p>`;
+    };
+  </script>
+</body>
+</html>

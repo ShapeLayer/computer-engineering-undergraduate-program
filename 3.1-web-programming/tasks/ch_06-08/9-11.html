@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>214823_박종현</title>
+</head>
+<body onload="onInit()">
+  <h2>book 객체 만들기</h2>
+  <div id="out"></div>
+  <script type="text/javascript">
+    const generateBookObj = () => {
+      const book1 = new Object();
+      book1.title = '죽고 싶지만 떡볶이는 먹고 싶어';
+      book1.author = '백세희';
+      book1.price = 13000;
+      book1.publisher = '흔';
+
+      const book2 = {
+        title: '보노보노 처럼 살다니 다행이야',
+        author: '김신회',
+        price: 14400,
+        publisher: '놀'
+      }
+
+      function Book3(title, author, price, publisher) {
+        this.title = title;
+        this.author = author;
+        this.price = price;
+        this.publisher = publisher;
+      }
+      const book3 = new Book3('코스모스', '칼 에드워드 세이건', 18000, '사이언스북스');
+      return [book1, book2, book3];
+    }
+
+    const onInit = () => {
+      const books = generateBookObj();
+      const out = document.getElementById('out');
+
+      for (let i = 0; i < books.length; i++) {
+        const gen = document.createElement('p');
+        const each = books[i];
+        gen.innerText = `book${i + 1} 출력
+          도서명: ${each.title}
+          저자명: ${each.author}
+          가격: ${each.price}
+          출판사: ${each.publisher}`;
+        out.appendChild(document.createElement('hr'));
+        out.appendChild(gen);
+      }
+    }
+  </script>
+</body>
+</html>
