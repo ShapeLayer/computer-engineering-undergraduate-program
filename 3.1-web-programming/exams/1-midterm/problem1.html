@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style lang="css">
+    /*
+      꼬리 문제 요구 사항
+    */
+    html, body, header, main, section, table, p, i, span, ul, ol, li, h1, h2, h3, h4, h5, b, strong, del {
+      font-family: Arial, sans-serif;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    section {
+      padding: 1em;
+      border-radius: .5em;
+      box-shadow: 0 0 4px gray;
+    }
+    table {
+      border: 1px solid gray;
+      border-collapse: collapse;
+      caption-side: top;
+    }
+    th, td {
+      border: 1px solid gray;
+    }
+    caption {
+      font-weight: bold;
+    }
+    .highlighted {
+      /* 3px의 진한 주황색 테두리 */
+      border: 3px solid orangered;
+      /* 부드러운 그림자 효과 */
+      box-shadow: 0 0 7px orangered
+    }
+    .content, .content:hover {
+      transition: .3s ease;
+    }
+    .content:hover {
+      background-color:bisque;
+      transform: scale(1.1);
+    }
+
+    /*
+      그 외 문제와 같게 보이지 않아 추가로 적용하는 스타일
+    */
+    main {
+      margin-top: 3em;
+      display: flex;
+      justify-content: center;
+    }
+    thead {
+      background-color: #333;
+      color: white;
+    }
+    thead th {
+      /* border: 1px solid white;*/
+    }
+    th, td {
+      padding: .5em;
+      text-align: center;
+    }
+    tfoot td {
+      padding: .7em;
+      background-color: lightsteelblue;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>영화 상영 스케줄</h1>
+  </header>
+  <main>
+    <section>
+      <table>
+        <caption>2025년 5월 영화관 상영표</caption>
+        <thead>
+          <tr>
+            <th>상영관</th>
+            <th colspan="2">오전</th>
+            <th colspan="2">오후</th>
+            <th>야간</th>
+          </tr>
+          <tr>
+            <th></th>
+            <th>9:00</th>
+            <th>11:00</th>
+            <th>14:00</th>
+            <th>16:00</th>
+            <th>20:00</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1관</td>
+            <td rowspan="2" class="content highlighted">어벤져스</td>
+            <td class="content">인사이드아웃</td>
+            <td class="content">스파이더맨</td>
+            <td class="content">스파이더맨</td>
+            <td class="content highlighted" rowspan="2">범죄도시4</td>
+          </tr>
+          <tr>
+            <td>2관</td>
+            <td colspan="2" class="content highlighted">엘리멘탈</td>
+            <td class="content">쥬라기월드</td>
+          </tr>
+          <tr>
+            <td>3관</td>
+            <td class="content">토이스토리</td>
+            <td class="content">쏘우</td>
+            <td colspan="2" class="content highlighted">듄2</td>
+            <td class="content">존윅4</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="6">상영 시간 및 영화는 변경될 수 있습니다.</td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+  </main>
+</body>
+
+</html>

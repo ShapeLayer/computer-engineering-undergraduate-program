@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    td { width: 50px; height: 50px; border: 1px solid orchid;}
+  </style>
+  <script>
+    const whatKeyDown = (e) => {
+      let str = ''
+      const div = document.getElementById('div')
+      div.innerHTML = ''
+      str += 'e.key: ' + e.key + '<br>'
+      str += 'e.code: ' + e.code + '<br>'
+      div.innerHTML = str
+    }
+
+
+    let tds
+    let prevIndex = 0, index = 0
+    window.onload = () => {
+      tds = document.getElementsByTagName('td')
+      tds[index].styleColor = 'orchid'
+    }
+
+    window.onkeydown = (e) => {
+      console.log(e.key, e.code)
+      switch (e.key.toLowerCase()) {
+        case 'arrowdown':
+        case 's':
+          if (index / 3 >= 2) return
+          index += 3
+          break
+        case 'arrowup':
+        case 'w':
+          if (index / 3 <= 0) return
+          index -= 3
+          break
+        case 'arrowleft':
+        case 'a':
+          if (index % 3 === 0) return
+          index -= 1
+          break
+        case 'arrowright':
+        case 'd':
+          if (index % 3 === 2) return
+          index += 1
+          break
+        default:
+          return
+      }
+      tds[index].style.backgroundColor = 'orchid'
+      tds[prevIndex].style.backgroundColor = 'white'
+      prevIndex = index
+    }
+  </script>
+</head>
+<body>
+  <h1>Key Event</h1>
+  <input type="text" placeholder="any key to see the event details." onkeydown="whatKeyDown(event)">
+  <div id="div"></div>
+  <p>Note: The 'e.key' property gives the value of the key pressed, while 'e.code' gives the physical key on the keyboard.</p>
+
+  <table>
+    <tr><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td></tr>
+  </table>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style lang="css">
+    html, body, header, main, section, table, p, i, span, ul, ol, li, h1, h2, h3, h4, h5, b, strong, del {
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background-color: #f4f4f4;
+    }
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 1.8em;
+      color: #333;
+    }
+    .gallery-wrapper {
+    }
+    .gallery {
+      position: relative;
+      width: 600px;
+      height: 350px;
+      background-color: white;
+      border: 2px dotted gray;
+      border-radius: 1em;
+      box-shadow: 0 0 3px gray;
+      transform: translateX(calc((100vw - 600px)/2))
+    }
+    .item, .item:hover {
+      transition: .5s ease;
+    }
+    .item {
+      display: inline-block;
+      width: 200px;
+      height: 150px;
+      position: absolute;
+      border-radius: .5em;
+      overflow: hidden;
+    }
+    .item:hover {
+      transform: scale(1.1);
+      z-index: 100;
+    }
+    #item-1 {
+      top: 20px;
+      left: 20px;
+      background-color: palevioletred;
+    }
+    #item-2 {
+      top: 15px;
+      left: 200px;
+      background-color:khaki;
+    }
+    #item-3 {
+      top: 25px;
+      right: 20px;
+      background-color: aquamarine;
+    }
+    #item-4 {
+      top: 150px;
+      left: 15px;
+      background-color: cornflowerblue;
+    }
+    #item-5 {
+      top: 160px;
+      left: 180px;
+      background-color: dodgerblue;
+    }
+    #item-6 {
+      top: 145px;
+      right: 40px;
+      background-color:darkslateblue;
+    }
+    .caption {
+      position: absolute;
+      bottom: -3em;
+      left: 0;
+      width: 180px;
+      padding: 10px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, .7);
+      color: white;
+      transition: .3s ease;
+    }
+    .item:hover > .caption {
+      bottom: 1em;
+      transition: 1s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <h1>갤러리</h1>
+  <div class="gallery-wrapper">
+    <div class="gallery">
+      <div id="item-1" class="item"><div class="caption">설명1</div></div>
+      <div id="item-2" class="item"><div class="caption">설명2</div></div>
+      <div id="item-3" class="item"><div class="caption">설명3</div></div>
+      <div id="item-4" class="item"><div class="caption">설명4</div></div>
+      <div id="item-5" class="item"><div class="caption">설명5</div></div>
+      <div id="item-6" class="item"><div class="caption">설명6</div></div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    let account = {
+      owner: "황기태",
+      code: "111",
+      balance: 35000,
+
+      // 익명 함수 사용 시 this에 접근 어려움
+      // inquiry: () => {
+      inquiry: function() {
+        return this.balance
+      },
+
+      // deposit: (money) => {
+      deposit: function(money) {
+        this.balance += money
+      },
+
+      // withdraw: (money) => {
+      withdraw: function(money) {
+        if (this.balance >= money) {
+          this.balance -= money
+        } else {
+          alert("잔액이 부족합니다.")
+        }
+      },
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

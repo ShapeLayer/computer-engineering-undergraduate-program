@@ -1,0 +1,58 @@
+---
+config:
+  theme: default
+---
+erDiagram
+    DRUG {
+        string drugbank-id PK
+        string name
+        string description
+        string cas-number
+        string state
+        string unii
+    }
+    CATEGORY {
+        string mesh-id PK
+        string category
+    }
+    DRUG }|..|{ CATEGORY: has
+    EXTERNAL_DATABASE_IDENTIFIER["EXTERNAL DATABASE IDENTIFIER"] {
+        string external-id PK
+        string resource
+    }
+    DRUG ||--o{ EXTERNAL_DATABASE_IDENTIFIER : contains
+    PRODUCT {
+        string id PK
+        string name
+        string labeller
+        int strength
+        string route
+        bool approved
+        string ndc-product-code
+        string ema-ma-number
+    }
+    DRUG }|..|{ PRODUCT : has
+    EXPERIMENTAL_PROPERTY["EXPERIMENTAL PROPERTY"] {
+        string id PK
+        string kind
+        string value
+        string source
+    }
+
+    DRUG ||--o{ EXPERIMENTAL_PROPERTY : covers
+
+    TARGET {
+        string id PK
+        string name
+        string organism
+    }
+
+    DRUG }|..|{ TARGET : works
+
+    REFERENCES {
+        string ref-id PK
+        string pubmed-id
+        string citation
+    }
+
+    TARGET ||--o{ REFERENCES : refers
