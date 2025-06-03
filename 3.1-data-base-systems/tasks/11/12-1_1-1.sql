@@ -1,1 +1,0 @@
-SHOW VARIABLES LIKE 'innodb_ft_min_token_size';
