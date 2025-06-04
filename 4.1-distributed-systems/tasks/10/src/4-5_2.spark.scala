@@ -1,0 +1,5 @@
+spark.sql("show databases")
+spark.sql("show databases").show()
+spark.sql("use testdb1")
+spark.sql("show tables").show()
+spark.sql("select * from flight").show()
