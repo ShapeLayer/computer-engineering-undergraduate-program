@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h3>텍스트가 자동 회전하며, 마우스로 클릭하면 중단합니다.</h3>
+  <hr>
+  <div>
+    <span id="span" style="background-color: yellow">자동 회전하는 텍스트입니다.</span>
+  </div>
+
+  <script>
+    const span = document.getElementById("span");
+
+    const doRotate = () => {
+      let currentText = span.innerText;
+      let firstChar = currentText.charAt(0);
+      let remains = currentText.slice(1);
+      currentText = remains + firstChar;
+      span.innerText = currentText;
+    };
+
+    let timerID = setInterval(doRotate, 200);
+  </script>
+</body>
+</html>
