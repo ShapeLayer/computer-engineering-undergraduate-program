@@ -1,0 +1,7 @@
+show databases;
+show tables;
+select * from test;
+
+create table if not exists kv_test (key int, value string) using hive options (fileFormat 'textfile', fieldDelim ',');
+load data local inpath 'kv.txt' into table kv_test;
+select * from kv_test;

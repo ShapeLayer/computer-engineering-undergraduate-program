@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+  <property>
+    <name>dfs.replication</name>
+    <value>2</value>
+  </property>
+  <property>
+    <name>dfs.namenode.name.dir</name>
+    <value>/home/azureuser/hadoop-3.4.1/namenode</value>
+  </property>
+  <property>
+    <name>dfs.datanode.data.dir</name>
+    <value>/home/azureuser/hadoop-3.4.1/datanode</value>
+  </property>
+  <property>
+    <name>dfs.hosts</name>
+    <value>/home/azureuser/hadoop-3.4.1/etc/hadoop/workers</value>
+  </property>
+</configuration>
