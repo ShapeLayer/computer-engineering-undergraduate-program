@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h3>로컬 스토리지 및 StorageEvent</h3>  
+  <hr>
+  <label for="item">품목명 <input type="text" id="item" name="item"></label>
+  <label for="count">개수 <input type="text" id="count" name="count"></label>
+  <button type="button" id="save" onclick="store()">저장</button>
+  <button type="button" id="search" onclick="retrive()">검색</button>
+  <p>로컬 스토리지의 변경 내용(storage event):</p>
+  <textarea name="lsout" id="lsout"></textarea>
+  <script>
+    let item = document.getElementById("item");
+    let count = document.getElementById("count");
+
+
+    const storageEventHandler = (event) => {
+      let eventDetail = "key: " + event.key + "\n" +
+                        "oldValue: " + event.oldValue + "\n" +
+                        "newValue: " + event.newValue + "\n" +
+                        "url: " + event.url + "\n" +
+                        "storageArea: " + event.storageArea + "\n";
+      document.getElementById("lsout").value += eventDetail + "\n";
+      console.log(event);
+    }
+
+
+    window.addEventListener('storage', storageEventHandler);
+
+    const store = () => {
+      if (!window.localStorage) return;
+      localStorage.setItem(item.value, count.value);
+    }
+
+    const retrive = () => {
+      if (!window.localStorage) return;
+      
+      let value = localStorage.getItem(item.value);
+      if (value === null) {
+        alert("해당 품목이 없습니다.");
+      } else {
+        count.value = value;
+      }
+    }
+  </script>
+</body>
+</html>

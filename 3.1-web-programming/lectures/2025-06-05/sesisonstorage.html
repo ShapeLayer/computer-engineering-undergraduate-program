@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h3>세션 스토리지에 구입 리스트 저장 및 검색</h3>  
+  <hr>
+  <label for="item">품목명 <input type="text" id="item" name="item"></label>
+  <label for="count">개수 <input type="text" id="count" name="count"></label>
+  <button type="button" id="save" onclick="store()">저장</button>
+  <button type="button" id="search" onclick="retrive()">검색</button>
+  <script>
+    let item = document.getElementById("item");
+    let count = document.getElementById("count");
+
+    const store = () => {
+      if (!window.sessionStorage) return;
+      sessionStorage.setItem(item.value, count.value);
+    }
+
+    const retrive = () => {
+      if (!window.sessionStorage) return;
+      
+      let value = sessionStorage.getItem(item.value);
+      if (value === null) {
+        alert("해당 품목이 없습니다.");
+      } else {
+        count.value = value;
+      }
+    }
+  </script>
+</body>
+</html>
