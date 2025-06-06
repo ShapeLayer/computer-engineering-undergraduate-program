@@ -19,9 +19,9 @@ cd /etc/wireguard
 # vi /etc/wireguard/wg0.conf
 sudo cp /media/sf_dist/wg0.conf /etc/wireguard/wg0.conf
 sudo chmod 600 /etc/wireguard/wg0.conf
-echo "" >> /etc/sysctl.conf
-echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
-
+sudo echo "" >> /etc/sysctl.conf
+sudo echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
+sudo systemctl enable wg-quick@wg0
 
 mkdir -p /home/hduser/.ssh
 ssh-keygen -t rsa -P '' -f /home/hduser/.ssh/id_rsa
