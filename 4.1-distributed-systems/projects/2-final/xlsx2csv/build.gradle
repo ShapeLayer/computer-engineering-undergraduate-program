@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
 repositories {
@@ -26,5 +27,11 @@ jar {
 java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(8))
+    }
+}
+
+shadowJar {
+    manifest {
+        attributes 'Main-Class': 'io.github.shapelayer.Main'
     }
 }

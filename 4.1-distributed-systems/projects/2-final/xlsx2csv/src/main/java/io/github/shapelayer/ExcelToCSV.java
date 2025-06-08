@@ -40,6 +40,7 @@ public class ExcelToCSV {
                 for (Row row : sheet) {
                     boolean firstCell = true;
                     for (Cell cell : row) {
+                        System.out.println(cell.toString());
                         if (!firstCell) {
                             sb.append(",");
                         }
