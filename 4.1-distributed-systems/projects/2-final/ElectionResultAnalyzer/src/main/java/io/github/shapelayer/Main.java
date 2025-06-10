@@ -11,6 +11,11 @@ import java.nio.file.Paths;
  * This program reads CSV files containing election results, processes them to extract
  * vote data for specific political parties, and generates summary reports by party and region.
  */
+class MainArgs {
+    String inputPath;
+    String outputPath;
+}
+
 public class Main {
     public static void main(String[] args) {
         try {
