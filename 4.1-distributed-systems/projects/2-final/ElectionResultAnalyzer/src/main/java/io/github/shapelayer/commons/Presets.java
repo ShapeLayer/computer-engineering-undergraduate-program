@@ -15,7 +15,7 @@ public class Presets {
   public static Struct8Values VALUES_OPEN_DEMOCRATIC_PARTY             = new Struct8Values(-0.7f, +0.6f, -0.6f, +0.6f);
 
   public static String NAME_DEMOCRATIC_PARTY_OF_KOREA = "더불어민주당";
-  public static String NAME_DEMOCRATIC_CITIZENS_PARTY = "더불어시민당당";
+  public static String NAME_DEMOCRATIC_CITIZENS_PARTY = "더불어시민당";
   public static String NAME_UNITED_FUTURE_PARTY = "미래통합당";
   public static String NAME_FUTURE_KOREA_PARTY = "미래한국당";
   public static String NAME_MINSAENGDANG = "민생당";
