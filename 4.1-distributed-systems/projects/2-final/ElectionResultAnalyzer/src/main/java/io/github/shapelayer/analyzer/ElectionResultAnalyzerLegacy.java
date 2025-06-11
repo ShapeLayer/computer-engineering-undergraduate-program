@@ -17,7 +17,7 @@ import java.util.stream.Stream;
 /**
  * Main analyzer class for processing election results
  */
-public class ElectionResultAnalyzer {
+public class ElectionResultAnalyzerLegacy {
     
     // Define target parties to analyze
     private static final Set<String> TARGET_PARTIES = Set.of(

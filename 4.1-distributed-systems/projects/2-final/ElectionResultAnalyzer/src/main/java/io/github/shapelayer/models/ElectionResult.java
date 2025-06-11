@@ -1,43 +1,42 @@
-package io.github.shapelayer.model;
+package io.github.shapelayer.models;
 
+import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Represents election results for a specific region
- */
 public class ElectionResult {
-    private String region;
-    private String district;
-    private Map<String, Long> partyVotes;
-    private long totalVotes;
-    private long invalidVotes;
-    private long abstentionVotes;
+  private Map<Party, Long> votes = new HashMap<>();
 
-    public ElectionResult(String region, String district, Map<String, Long> partyVotes, 
-                         long totalVotes, long invalidVotes, long abstentionVotes) {
-        this.region = region;
-        this.district = district;
-        this.partyVotes = partyVotes;
-        this.totalVotes = totalVotes;
-        this.invalidVotes = invalidVotes;
-        this.abstentionVotes = abstentionVotes;
+  public void append(Party party, long votes) {
+    if (this.votes.containsKey(party)) {
+      this.votes.put(party, this.votes.get(party) + votes);
+    } else {
+      this.votes.put(party, votes);
     }
+  }
 
-    // Getters
-    public String getRegion() { return region; }
-    public String getDistrict() { return district; }
-    public Map<String, Long> getPartyVotes() { return partyVotes; }
-    public long getTotalVotes() { return totalVotes; }
-    public long getInvalidVotes() { return invalidVotes; }
-    public long getAbstentionVotes() { return abstentionVotes; }
+  public long get(Party party) {
+    return this.votes.getOrDefault(party, 0L);
+  }
 
-    public long getVotesForParty(String party) {
-        return partyVotes.getOrDefault(party, 0L);
+  public Map<Party, Long> toMap() {
+    return votes;
+  }
+
+  public ElectionResult add(ElectionResult other) {
+    ElectionResult result = new ElectionResult();
+    for (Party party : Party.values()) {
+      long totalVotes = this.get(party) + other.get(party);
+      result.append(party, totalVotes);
     }
+    return result;
+  }
 
-    @Override
-    public String toString() {
-        return String.format("ElectionResult{region='%s', district='%s', totalVotes=%d, partyVotes=%s}", 
-                           region, district, totalVotes, partyVotes);
+  public ElectionResult sub(ElectionResult other) {
+    ElectionResult result = new ElectionResult();
+    for (Party party : Party.values()) {
+      long totalVotes = this.get(party) - other.get(party);
+      result.append(party, totalVotes);
     }
+    return result;
+  }
 }

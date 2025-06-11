@@ -1,0 +1,39 @@
+package io.github.shapelayer.models;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class ElectionRegion {
+  public Map<String, ElectionResult> results = new HashMap<>();
+
+  public void appendResult(String region, Party party, long votes) {
+    results.putIfAbsent(region, new ElectionResult());
+    results.get(region).append(party, votes);
+  }
+
+  public ElectionResult get(String region) {
+    return results.getOrDefault(region, new ElectionResult());
+  }
+
+  public Map<String, ElectionResult> toMap() {
+    return results;
+  }
+
+  public ElectionRegion add(ElectionRegion other) {
+    ElectionRegion result = new ElectionRegion();
+    for (String region : results.keySet()) {
+      ElectionResult combinedResult = this.get(region).add(other.get(region));
+      result.results.put(region, combinedResult);
+    }
+    return result;
+  }
+
+  public ElectionRegion sub(ElectionRegion other) {
+    ElectionRegion result = new ElectionRegion();
+    for (String region : results.keySet()) {
+      ElectionResult combinedResult = this.get(region).sub(other.get(region));
+      result.results.put(region, combinedResult);
+    }
+    return result;
+  }
+}

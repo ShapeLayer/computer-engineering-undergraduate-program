@@ -1,6 +1,6 @@
 package io.github.shapelayer;
 
-import io.github.shapelayer.analyzer.ElectionResultAnalyzer;
+import io.github.shapelayer.controllers.ElectionResultAnalyzer;
 
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -12,36 +12,38 @@ import java.nio.file.Paths;
  * vote data for specific political parties, and generates summary reports by party and region.
  */
 class MainArgs {
-    String inputPath;
-    String outputPath;
+  String inputPath;
+  String outputPath;
+
+  public static MainArgs parse(String[] args) {
+    MainArgs mainArgs = new MainArgs();
+    for (String arg : args) {
+      if (arg.startsWith("--input=")) {
+        mainArgs.inputPath = arg.split("=")[1];
+      } else if (arg.startsWith("--output=")) {
+        mainArgs.outputPath = arg.split("=")[1];
+      }
+    }
+    return mainArgs;
+  }
 }
 
 public class Main {
-    public static void main(String[] args) {
-        try {
-            // Get the current working directory and construct paths
-            String currentDir = System.getProperty("user.dir");
-            String csvDirectory = Paths.get(currentDir, "csv").toString();
-            String outputDirectory = Paths.get(currentDir, "output").toString();
-            
-            System.out.println("Election Result Analyzer");
-            System.out.println("========================");
-            System.out.printf("CSV Directory: %s%n", csvDirectory);
-            System.out.printf("Output Directory: %s%n", outputDirectory);
-            System.out.println();
-            
-            // Create and run the analyzer
-            ElectionResultAnalyzer analyzer = new ElectionResultAnalyzer(csvDirectory, outputDirectory);
-            analyzer.analyzeElectionResults();
-            
-        } catch (IOException e) {
-            System.err.println("Error during analysis: " + e.getMessage());
-            e.printStackTrace();
-            System.exit(1);
-        } catch (Exception e) {
-            System.err.println("Unexpected error: " + e.getMessage());
-            e.printStackTrace();
-            System.exit(1);
-        }
+  public static void main(String[] args) {
+    MainArgs mainArgs = MainArgs.parse(args);
+    if (mainArgs.inputPath == null || mainArgs.outputPath == null) {
+      System.out.println("Usage: java -jar ElectionResultAnalyzer.jar --input=<input_file> --output=<output_file>");
+      System.exit(1);
     }
+
+    ElectionResultAnalyzer analyzer = new ElectionResultAnalyzer();
+    try {
+      analyzer.processResults(Paths.get(mainArgs.inputPath), Paths.get(mainArgs.outputPath));
+      System.out.println("Election results processed successfully. Output saved to: " + mainArgs.outputPath);
+    } catch (IOException e) {
+      System.err.println("Error processing election results: " + e.getMessage());
+      e.printStackTrace();
+      System.exit(1);
+    }
+  }
 }
