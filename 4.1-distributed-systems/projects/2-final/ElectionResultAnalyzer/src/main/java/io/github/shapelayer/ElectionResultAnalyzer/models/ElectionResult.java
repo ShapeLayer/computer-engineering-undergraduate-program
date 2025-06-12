@@ -39,4 +39,13 @@ public class ElectionResult {
     }
     return result;
   }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    for (Map.Entry<Party, Long> entry : votes.entrySet()) {
+      sb.append(entry.getKey().name()).append(": ").append(entry.getValue()).append("\n");
+    }
+    return sb.toString();
+  }
 }

@@ -4,11 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ElectionRegion {
+  // Region, <Party, Votes>
   public Map<String, ElectionResult> results = new HashMap<>();
 
   public void appendResult(String region, Party party, long votes) {
     results.putIfAbsent(region, new ElectionResult());
-    results.get(region).append(party, votes);
+    
+    ElectionResult electionResult = results.get(region);
+    electionResult.append(party, votes);
   }
 
   public ElectionResult get(String region) {

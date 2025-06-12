@@ -21,39 +21,27 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelToCSV {
-
-    /**
-     * Converts all sheets from an Excel file (provided as an InputStream) to a list of CSV strings.
-     * Each string in the list represents the CSV content of one sheet.
-     * This method is suitable for use in Hadoop Mappers where input is an InputStream.
-     *
-     * @param inputStream The InputStream of the Excel file.
-     * @return A list of strings, where each string is the CSV content of a sheet.
-     * @throws IOException If an I/O error occurs or the stream is not a valid Excel file.
-     */
     public static List<String> convert(InputStream inputStream) throws IOException {
         List<String> sheetsCsvData = new ArrayList<>();
         try (Workbook workbook = new XSSFWorkbook(inputStream)) {
-            for (int i = 0; i < workbook.getNumberOfSheets(); i++) {
-                Sheet sheet = workbook.getSheetAt(i);
-                StringBuilder sb = new StringBuilder();
-                for (Row row : sheet) {
-                    boolean firstCell = true;
-                    for (Cell cell : row) {
-                        System.out.println(cell.toString());
-                        if (!firstCell) {
-                            sb.append(",");
-                        }
-                        // Basic cell to string conversion, consider DataFormatter for more complex types
-                        sb.append("\"").append(cell.toString().replace("\"", "\"\"")).append("\"");
-                        firstCell = false;
+            Sheet sheet = workbook.getSheetAt(0);
+            StringBuilder sb = new StringBuilder();
+            for (Row row : sheet) {
+                boolean firstCell = true;
+                for (Cell cell : row) {
+                    System.out.println(cell.toString());
+                    if (!firstCell) {
+                        sb.append(",");
                     }
-                    if (!firstCell) { // If row had any cells
-                        sb.append("\n");
-                    }
+                    // Basic cell to string conversion, consider DataFormatter for more complex types
+                    sb.append("\"").append(cell.toString().replace("\"", "\"\"")).append("\"");
+                    firstCell = false;
                 }
-                sheetsCsvData.add(sb.toString());
+                if (!firstCell) { // If row had any cells
+                    sb.append("\n");
+                }
             }
+            sheetsCsvData.add(sb.toString());
         }
         return sheetsCsvData;
     }

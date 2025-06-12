@@ -77,6 +77,8 @@ public class Main {
     CSVFeeder feeder = new CSVFeeder(inputPaths, analyzer);
     LocalFileReader fileIO = new LocalFileReader();
     feeder.feed(fileIO);
+
+    System.out.println(analyzer.toString());
   }
 
   static String[] queryInputPath(String inputPath) {

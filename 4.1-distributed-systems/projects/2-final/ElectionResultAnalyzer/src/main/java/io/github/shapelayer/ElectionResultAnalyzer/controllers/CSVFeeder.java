@@ -22,7 +22,7 @@ public class CSVFeeder {
   public void feed(FileIOCompatible fileIO) {
     for (String path : paths) {
       try {
-        System.out.print("Processing file: " + path + " ... ");
+        System.out.println("Processing file: " + path + " ... ");
         List<String[]> data = fileIO.readCSV(path);
         
         if (data == null || data.isEmpty()) {
@@ -70,21 +70,23 @@ public class CSVFeeder {
               break;
             }
           }
-          if (partyRowFound) {
-            for (Entry<Party, String> entry : PartySupport.partyEnumToString.entrySet()) {
-              Party party = entry.getKey();
-              String partyName = entry.getValue();
-              if (cell.contains(partyName)) {
-                indexPartyMap.put(j, party);
-              }
-            }
-          }
         }
 
         if (!partyRowFound) { continue; }
         else { break; }
       }
-      
+
+      for (int j = 0; j < row.length; j++) {
+        String cell = row[j];
+        for (Entry<Party, String> entry : PartySupport.partyEnumToString.entrySet()) {
+          Party party = entry.getKey();
+          String partyName = entry.getValue();
+          if (cell.contains(partyName)) {
+            indexPartyMap.put(j, party);
+          }
+        }
+      }
+
       // Voting data
       for (int j : indexPartyMap.keySet()) {
         if (j < row.length && row[j] != null && !row[j].isEmpty()) {
