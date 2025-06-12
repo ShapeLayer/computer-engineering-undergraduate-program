@@ -1,4 +1,4 @@
-package io.github.shapelayer.models;
+package io.github.shapelayer.ElectionResultAnalyzer.models;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -35,5 +35,14 @@ public class ElectionRegion {
       result.results.put(region, combinedResult);
     }
     return result;
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    for (Map.Entry<String, ElectionResult> entry : results.entrySet()) {
+      sb.append(entry.getKey()).append(": ").append(entry.getValue().toString()).append("\n");
+    }
+    return sb.toString();
   }
 }

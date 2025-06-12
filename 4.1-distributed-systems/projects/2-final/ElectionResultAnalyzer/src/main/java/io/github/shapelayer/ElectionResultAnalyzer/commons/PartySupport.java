@@ -1,7 +1,7 @@
-package io.github.shapelayer.commons;
+package io.github.shapelayer.ElectionResultAnalyzer.commons;
 
-import io.github.shapelayer.models.Party;
-import io.github.shapelayer.models.Struct8Values;
+import io.github.shapelayer.ElectionResultAnalyzer.models.Party;
+import io.github.shapelayer.ElectionResultAnalyzer.models.Struct8Values;
 
 import java.util.HashMap;
 import java.util.Map;

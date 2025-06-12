@@ -1,4 +1,4 @@
-package io.github.shapelayer.models;
+package io.github.shapelayer.ElectionResultAnalyzer.models;
 
 public class Struct8Values {
   public float economic;

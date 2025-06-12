@@ -1,11 +1,9 @@
 plugins {
     id 'java'
-    id 'application'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
-mainClassName = 'io.github.shapelayer.Main'
-
-group = 'io.github.shapelayer'
+group = 'io.github.shapelayer.ElectionResultAnalyzer'
 version = '1.0-SNAPSHOT'
 
 repositories {
@@ -13,6 +11,9 @@ repositories {
 }
 
 dependencies {
+    implementation("org.apache.hadoop:hadoop-common:3.3.6")
+    implementation("org.apache.hadoop:hadoop-mapreduce-client-core:3.3.6")
+
     implementation 'com.opencsv:opencsv:5.7.1'
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
@@ -20,4 +21,17 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(8))
+    }
+}
+
+shadowJar {
+    manifest {
+        attributes 'Main-Class': 'io.github.shapelayer.ElectionResultAnalyzer.Main'
+    }
 }

@@ -1,6 +1,9 @@
-package io.github.shapelayer.models;
+package io.github.shapelayer.ElectionResultAnalyzer.controllers;
+
+import io.github.shapelayer.ElectionResultAnalyzer.models.FileIOCompatible;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,7 +11,7 @@ import java.util.List;
 
 public class LocalFileReader implements FileIOCompatible {
   @Override
-  public List<String[]> readCSV(String filePath) throws IOException {
+  public List<String[]> readCSV(String filePath) throws FileNotFoundException {
     List<String[]> result = new ArrayList<>();
     
     try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
@@ -22,8 +25,10 @@ public class LocalFileReader implements FileIOCompatible {
         
         result.add(fields);
       }
+    } catch (IOException e) {
+        throw new RuntimeException(e);
     }
-    
-    return result;
+
+      return result;
   }
 }

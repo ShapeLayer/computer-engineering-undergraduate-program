@@ -1,4 +1,4 @@
-package io.github.shapelayer.models;
+package io.github.shapelayer.ElectionResultAnalyzer.models;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,6 +1,6 @@
-package io.github.shapelayer.commons;
+package io.github.shapelayer.ElectionResultAnalyzer.commons;
 
-import io.github.shapelayer.models.Struct8Values;
+import io.github.shapelayer.ElectionResultAnalyzer.models.Struct8Values;
 
 public class Presets {
   public static Struct8Values VALUES_DEMOCRATIC_PARTY_OF_KOREA         = new Struct8Values(-0.6f, +0.6f, -0.5f, +0.5f);

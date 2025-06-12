@@ -1,4 +1,4 @@
-package io.github.shapelayer.models;
+package io.github.shapelayer.ElectionResultAnalyzer.models;
 
 public enum Party {
   DEMOCRATIC_PARTY_OF_KOREA,

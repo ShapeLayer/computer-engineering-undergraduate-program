@@ -1,5 +1,7 @@
-package io.github.shapelayer.models;
+package io.github.shapelayer.ElectionResultAnalyzer.controllers;
 
+import io.github.shapelayer.ElectionResultAnalyzer.commons.Defaults;
+import io.github.shapelayer.ElectionResultAnalyzer.models.FileIOCompatible;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
@@ -8,7 +10,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-
+/*
 public class HDFSFileReader implements FileIOCompatible {
   private Configuration conf;
   private FileSystem fs;
@@ -26,7 +28,7 @@ public class HDFSFileReader implements FileIOCompatible {
   }
   
   @Override
-  public List<String[]> readCSV(String filePath) throws IOException {
+  public List<String[]> readCSV(String filePath) {
     List<String[]> result = new ArrayList<>();
     Path path = new Path(filePath);
     
@@ -54,3 +56,4 @@ public class HDFSFileReader implements FileIOCompatible {
     }
   }
 }
+*/

@@ -1,10 +1,10 @@
-package io.github.shapelayer.controllers;
+package io.github.shapelayer.ElectionResultAnalyzer.controllers;
 
-import io.github.shapelayer.commons.PartySupport;
-import io.github.shapelayer.models.ElectionRegion;
-import io.github.shapelayer.models.ElectionResult;
-import io.github.shapelayer.models.Party;
-import io.github.shapelayer.models.Struct8Values;
+import io.github.shapelayer.ElectionResultAnalyzer.commons.PartySupport;
+import io.github.shapelayer.ElectionResultAnalyzer.models.ElectionRegion;
+import io.github.shapelayer.ElectionResultAnalyzer.models.ElectionResult;
+import io.github.shapelayer.ElectionResultAnalyzer.models.Party;
+import io.github.shapelayer.ElectionResultAnalyzer.models.Struct8Values;
 
 import java.util.Map;
 
@@ -23,14 +23,14 @@ public class ElectionResultAnalyzer {
   public Map<String, Struct8Values> getResultsAs8Values() {
     Map<String, ElectionResult> results = electionRegion.toMap();
     this.cached8Values.clear();
-    
+
     for (Map.Entry<String, ElectionResult> entry : results.entrySet()) {
       String region = entry.getKey();
       ElectionResult electionResult = entry.getValue();
       Struct8Values s8vals = compute8Values(electionResult);
       this.cached8Values.put(region, s8vals);
     }
-    
+
     return this.cached8Values;
   }
 
@@ -50,5 +50,10 @@ public class ElectionResultAnalyzer {
     }
 
     return s8vals;
+  }
+
+  @Override
+  public String toString() {
+    return electionRegion.toString();
   }
 }
