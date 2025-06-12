@@ -24,6 +24,13 @@ public class VoteCounted {
     this.count = count;
   }
 
+  public String getCandidate() {
+    return candidate;
+  }
+  public long getCount() {
+    return count;
+  }
+
   @Override
   public String toString() {
     return "VoteCounted{" +
@@ -34,5 +41,9 @@ public class VoteCounted {
       ", candidate='" + candidate + '\'' +
       ", count=" + count +
       '}';
+  }
+
+  public String getRegionName() {
+    return regionWard;
   }
 }
