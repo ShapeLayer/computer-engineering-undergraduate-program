@@ -30,7 +30,7 @@ public class VisualizationController {
       // Add map visualization
       try {
         ElectionMapVisualizer mapViz = new ElectionMapVisualizer();
-        mapViz.loadGeoData("cartogram/southkorea-maps/popong/precinct/assembly-precinct-20-geo.json");
+        mapViz.loadGeoData("southkorea-maps/popong/precinct/assembly-precinct-20-geo.json");
         mapViz.setElectionData(electionData);
         tabbedPane.addTab("Map View", new JScrollPane(mapViz));
       } catch (Exception e) {

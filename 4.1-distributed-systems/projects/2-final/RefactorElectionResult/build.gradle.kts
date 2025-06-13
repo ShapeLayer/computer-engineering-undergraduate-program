@@ -9,8 +9,10 @@ group = "me.jonghyeon.refactor_election_result"
 version = "1.0-SNAPSHOT"
 
 repositories {
-    maven { url = uri("https://repo.osgeo.org/repository/release/")}
-    maven { url = uri("https://repo.osgeo.org/repository/snapshot")}
+    maven { url = uri("https://nexus.geomatys.com/repository/geotoolkit/") }
+    maven { url = uri("https://repo1.maven.org/maven2/") }
+    maven { url = uri("https://repo.osgeo.org/repository/geotools-releases/") }
+    maven { url = uri("https://repo.osgeo.org/repository/release/") }
     mavenCentral()
 }
 
@@ -32,6 +34,8 @@ dependencies {
 
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+
+    implementation("log4j:log4j:1.2.17")
 }
 
 tasks.test {
@@ -42,6 +46,10 @@ java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(8))
     }
+}
+
+task<Exec>("cloneRequiredResources") {
+    commandLine("git", "clone", "https://github.com/southkorea/southkorea-maps")
 }
 
 tasks.withType<ShadowJar> {

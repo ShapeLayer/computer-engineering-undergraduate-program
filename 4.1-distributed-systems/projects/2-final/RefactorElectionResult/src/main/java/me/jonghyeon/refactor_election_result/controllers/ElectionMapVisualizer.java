@@ -108,7 +108,7 @@ public class ElectionMapVisualizer extends JPanel {
           .sum();
 
       float intensity = (float) totalVotes / maxVotes;
-      Color color = new Color(intensity, 0.2f, 0.2f, 0.7f);
+      Color color = new Color(Math.min(intensity, .5f), 0.2f, 0.2f, 0.7f);
       regionColors.put(region, color);
     }
   }
