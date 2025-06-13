@@ -9,10 +9,6 @@ group = "me.jonghyeon.refactor_election_result"
 version = "1.0-SNAPSHOT"
 
 repositories {
-    maven { url = uri("https://nexus.geomatys.com/repository/geotoolkit/") }
-    maven { url = uri("https://repo1.maven.org/maven2/") }
-    maven { url = uri("https://repo.osgeo.org/repository/geotools-releases/") }
-    maven { url = uri("https://repo.osgeo.org/repository/release/") }
     mavenCentral()
 }
 
@@ -26,16 +22,10 @@ dependencies {
     implementation("org.apache.spark:spark-core_2.12:3.5.0")
     implementation("org.apache.spark:spark-sql_2.12:3.5.0")
 
-    implementation("org.jfree:jfreechart:1.5.6")
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.19.0")
-    implementation("org.geotools:gt-main:29.2")
-    implementation("org.geotools:gt-shapefile:29.2")
-    implementation("org.geotools:gt-swing:29.2")
+    implementation("io.github.cdimascio:dotenv-java:2.3.2")
 
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
-
-    implementation("log4j:log4j:1.2.17")
 }
 
 tasks.test {

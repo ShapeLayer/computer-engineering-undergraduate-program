@@ -1,6 +1,8 @@
 package me.jonghyeon.refactor_election_result.models;
 
-public class VoteCounted {
+import java.io.Serializable;
+
+public class VoteCounted implements Serializable {
   public String voteType;
   public String regionArea;
   public String regionCity;

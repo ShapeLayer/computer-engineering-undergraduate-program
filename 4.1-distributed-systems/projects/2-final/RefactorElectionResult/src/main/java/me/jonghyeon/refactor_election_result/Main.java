@@ -1,8 +1,13 @@
 package me.jonghyeon.refactor_election_result;
 
+import io.github.cdimascio.dotenv.Dotenv;
+import io.github.cdimascio.dotenv.DotenvException;
 import me.jonghyeon.refactor_election_result.commons.Defaults;
+import me.jonghyeon.refactor_election_result.commons.Env;
+import me.jonghyeon.refactor_election_result.commons.PartySupports;
 import me.jonghyeon.refactor_election_result.controllers.*;
 import me.jonghyeon.refactor_election_result.models.VoteCounted;
+import me.jonghyeon.refactor_election_result.models.Values8;
 import org.apache.hadoop.fs.FileSystem;
 
 import java.io.IOException;
@@ -10,6 +15,8 @@ import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 class MainArgs {
   public static final String USAGE = "RefactorElectionResult --input=<input-path> [--hadoop] [--spark] [--output=<hdfs-output-path>] [--namenode=<hdfs-namenode-url>]";
@@ -71,6 +78,8 @@ class MainArgs {
 }
 
 public class Main {
+  public static Env env = new Env();
+
   public static void main(String[] args) throws IOException {
     // Parse args
     MainArgs mainArgs = MainArgs.from(args);
@@ -95,9 +104,64 @@ public class Main {
 
     if (mainArgs.useSpark) {
       System.out.println("Using Apache Spark for data processing...");
-      SparkDataHandler sparkHandler = new SparkDataHandler("ElectionResultProcessor");
+      SparkHandler sparkHandler = new SparkHandler();
       try {
-        sparkHandler.processAndSaveData(parsed, mainArgs.outputPath, mainArgs.useHadoop);
+        Map<String, Map<String, Map<String, Values8>>> results = sparkHandler.proc(parsed);
+        System.out.println("=== Processing Complete ===");
+        System.out.println("Final calculated Values8 results by region:");
+        for (Entry<String, Map<String, Map<String, Values8>>> entry : results.entrySet()) {
+          for (Entry<String, Map<String, Values8>> subEntry : entry.getValue().entrySet()) {
+            System.out.println("Region: " + entry.getKey() + ", Area: " + subEntry.getKey());
+            for (Entry<String, Values8> valuesEntry : subEntry.getValue().entrySet()) {
+              System.out.println("  Candidate: " + valuesEntry.getKey() + ", Values8: " + valuesEntry.getValue());
+            }
+          }
+          System.out.println("Region " + entry.getKey() + ": " + entry.getValue().toString());
+        }
+        
+        // Write results to file
+        PrintWriter writer = null;
+        try {
+          if (!mainArgs.useHadoop) {
+            java.nio.file.Path outputPath = Paths.get(mainArgs.outputPath);
+            if (!Files.exists(outputPath.getParent())) {
+              Files.createDirectories(outputPath.getParent());
+            }
+            writer = new PrintWriter(Files.newBufferedWriter(outputPath));
+          } else {
+            org.apache.hadoop.fs.Path outputPath = new org.apache.hadoop.fs.Path(mainArgs.outputPath);
+            if (!fs.exists(outputPath.getParent())) {
+              fs.mkdirs(outputPath.getParent());
+            }
+            writer = new PrintWriter(fs.create(outputPath, true));
+          }
+          
+          writer.println("Region,Economic,Diplomatic,Civil,Society");
+            // Flatten and write all entries to CSV
+            for (Entry<String, Map<String, Map<String, Values8>>> regionEntry : results.entrySet()) {
+              String region = regionEntry.getKey();
+              
+              for (Entry<String, Map<String, Values8>> areaEntry : regionEntry.getValue().entrySet()) {
+                String area = areaEntry.getKey();
+                
+                for (Entry<String, Values8> candidateEntry : areaEntry.getValue().entrySet()) {
+                  String candidate = candidateEntry.getKey();
+                  Values8 values = candidateEntry.getValue();
+                  
+                  writer.println(String.format("%s,%.4f,%.4f,%.4f,%.4f",
+                    "\"" + region + "," + area + "," + candidate + "\"",
+                    values.economic, 
+                    values.diplomatic, 
+                    values.civil, 
+                    values.society));
+                }
+              }
+            }
+        } finally {
+          if (writer != null) {
+            writer.close();
+          }
+        }
       } finally {
         sparkHandler.close();
       }
