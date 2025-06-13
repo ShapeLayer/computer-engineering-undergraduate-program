@@ -90,10 +90,6 @@ public class Main {
       parsed = HDFSExcelHandler.parseAll(mainArgs.inputPaths, fs);
     }
 
-    // Visualize
-    VisualizationController vizController = new VisualizationController(parsed);
-    vizController.showVisualization();
-
     // Output
     System.out.println("Output path: " + mainArgs.outputPath);
 
