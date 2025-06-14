@@ -19,3 +19,6 @@
 [submodule "2.1-iot-computing/projects/final"]
 	path = 2.1-iot-computing/projects/final
 	url = https://github.com/ShapeLayer/keyboard-for-djmax
+[submodule "4.1-distributed-systems/projects/2-final"]
+	path = 4.1-distributed-systems/projects/2-final
+	url = https://github.com/ShapeLayer/election-result-8values-spark
