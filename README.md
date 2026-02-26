@@ -11,7 +11,7 @@ Computer Enginnering Undergraduate Program @ Chonnam National University
  * [`STT3019`] [JAVA프로그래밍및실습(조영준, 2학년 1학기)](./2.1-java-programming-and-practice) @인공지능학부
  * [`ECE2014`] [논리회로설계(김영철, 2학년 1학기)](./2.1-logic-circuits-design) @컴퓨터정보통신공학과
  * [`ECE9048`] [리눅스시스템및실습(박재형, 2학년 1학기)](./2.1-linux-system-and-practice) @컴퓨터정보통신공학과
- * [`R0252012`] [프로그래밍개론2(プログラミング概論Ⅱ)(후쿠다 오사무(福田 修), 2학년 2학기)](./2.2-programming-practice-2) @사가대학 이공학부 이공학과 지능정보시스템과정 (佐賀大学理工学部理工学科 知能情報システム工学コース)
+ * [`R0252012`] [프로그래밍연습2(プログラミング演習Ⅱ)(후쿠다 오사무(福田 修), 2학년 2학기)](./2.2-programming-practice-2) @사가대학 이공학부 이공학과 지능정보시스템과정 (佐賀大学理工学部理工学科 知能情報システム工学コース)
  * [`R0252022`] [프로그래밍개론2(プログラミング概論Ⅱ)(나카야마 코이치(中山　功一), 2학년 2학기)](./2.2-introduction-to-programming-2) @사가대학 이공학부 이공학과 지능정보시스템과정 (佐賀大学理工学部理工学科 知能情報システム工学コース)
  * [`CIS3001`] [자료구조(박재형, 2학년 2학기)](./2.2-data-structures) @컴퓨터정보통신공학과
  * [`CIS2006`] [고급프로그래밍및실습(원용관, 2학년 2학기)](./2.2-advanced-computer-programming-and-practice) @컴퓨터정보통신공학과
