@@ -22,3 +22,21 @@
 [submodule "4.1-distributed-systems/projects/2-final"]
 	path = 4.1-distributed-systems/projects/2-final
 	url = https://github.com/ShapeLayer/election-result-8values-spark
+[submodule "4.2-digital-image-processing/projects/fftj-kt"]
+	path = 4.2-digital-image-processing/projects/fftj-kt
+	url = https://github.com/ShapeLayer/fftj-kt
+[submodule "4.2-digital-image-processing/projects/cubism-sdk-realtime-facial-representation"]
+	path = 4.2-digital-image-processing/projects/cubism-sdk-realtime-facial-representation
+	url = https://github.com/ShapeLayer/cubism-sdk-realtime-facial-representation
+[submodule "4.2-digital-image-processing/projects/lite2d"]
+	path = 4.2-digital-image-processing/projects/lite2d
+	url = https://github.com/ShapeLayer/lite2d
+[submodule "4.2-digital-image-processing/projects/spotdiff-py"]
+	path = 4.2-digital-image-processing/projects/spotdiff-py
+	url = https://github.com/ShapeLayer/spotdiff-py
+[submodule "3.2-network-systems/projects/simple-irc"]
+	path = 3.2-network-systems/projects/simple-irc
+	url = https://github.com/ShapeLayer/simple-irc
+[submodule "2.2-introduction-to-programming-2/projects/n.koldline"]
+	path = 2.2-introduction-to-programming-2/projects/n.koldline
+	url = https://github.com/ShapeLayer/n.koldline
