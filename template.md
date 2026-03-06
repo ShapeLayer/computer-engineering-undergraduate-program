@@ -1,4 +1,3 @@
-# Computer Enginnering Undergraduate Program
-Computer Enginnering Undergraduate Program @ Chonnam National University
+# (ko) Computer Engineering Undergraduate Program
 
 {summary}
