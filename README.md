@@ -1,30 +1,29 @@
-# Computer Enginnering Undergraduate Program
-Computer Enginnering Undergraduate Program @ Chonnam National University
+# (ko) Computer Engineering Undergraduate Program
 
- * [`CLT0868`] [공학을위한컴퓨터과학적사고(윤효순, 1학년 1학기)](./1.1-computational-thinking-for-engineering) @소프트웨어공학과
- * [`CLT0961`] [인공지능기초(김경백, 1학년 1학기)](./1.1-artificial-intelligence-basics) @인공지능학부
- * [`ENV1005`] [공학설계입문(이칠우, 1학년 1학기)](./1.1-introduction-to-engineering-design) @컴퓨터정보통신공학과
- * [`ECE9047`] [기초프로그래밍및실습(박재형, 1학년 2학기)](./1.2-software-programming-basics-and-practice) @컴퓨터정보통신공학과
- * [`ECE9049`] [IoT컴퓨팅(김진술, 2학년 1학기)](./2.1-iot-computing) @전자컴퓨터공학부 컴퓨터정보통신공학전공
- * [`ECE2011`] [선형대수학(박호성, 2학년 1학기)](./2.1-linear-algebra) @컴퓨터정보통신공학과
- * [`CIS1010`] [C프로그래밍및실습(김진술, 2학년 1학기)](./2.1-c-programming-and-practice) @컴퓨터정보통신공학과
- * [`STT3019`] [JAVA프로그래밍및실습(조영준, 2학년 1학기)](./2.1-java-programming-and-practice) @인공지능학부
- * [`ECE2014`] [논리회로설계(김영철, 2학년 1학기)](./2.1-logic-circuits-design) @컴퓨터정보통신공학과
- * [`ECE9048`] [리눅스시스템및실습(박재형, 2학년 1학기)](./2.1-linux-system-and-practice) @컴퓨터정보통신공학과
+ * [`CLT0868`] [공학을위한컴퓨터과학적사고(윤효순, 1학년 1학기)](./1.1-computational-thinking-for-engineering) @전남대학교 공과대학 소프트웨어공학과
+ * [`CLT0961`] [인공지능기초(김경백, 1학년 1학기)](./1.1-artificial-intelligence-basics) @전남대학교 AI융합대학 인공지능학부
+ * [`ENV1005`] [공학설계입문(이칠우, 1학년 1학기)](./1.1-introduction-to-engineering-design) @전남대학교 공과대학 컴퓨터정보통신공학과
+ * [`ECE9047`] [기초프로그래밍및실습(박재형, 1학년 2학기)](./1.2-software-programming-basics-and-practice) @전남대학교 공과대학 컴퓨터정보통신공학과
+ * [`ECE9049`] [IoT컴퓨팅(김진술, 2학년 1학기)](./2.1-iot-computing) @전남대학교 공과대학 전자컴퓨터공학부 컴퓨터정보통신공학전공
+ * [`ECE2011`] [선형대수학(박호성, 2학년 1학기)](./2.1-linear-algebra) @전남대학교 공과대학 컴퓨터정보통신공학과
+ * [`CIS1010`] [C프로그래밍및실습(김진술, 2학년 1학기)](./2.1-c-programming-and-practice) @전남대학교 공과대학 컴퓨터정보통신공학과
+ * [`STT3019`] [JAVA프로그래밍및실습(조영준, 2학년 1학기)](./2.1-java-programming-and-practice) @전남대학교 AI융합대학 인공지능학부
+ * [`ECE2014`] [논리회로설계(김영철, 2학년 1학기)](./2.1-logic-circuits-design) @전남대학교 공과대학 컴퓨터정보통신공학과
+ * [`ECE9048`] [리눅스시스템및실습(박재형, 2학년 1학기)](./2.1-linux-system-and-practice) @전남대학교 공과대학 컴퓨터정보통신공학과
  * [`R0252012`] [프로그래밍연습2(プログラミング演習Ⅱ)(후쿠다 오사무(福田 修), 2학년 2학기)](./2.2-programming-practice-2) @사가대학 이공학부 이공학과 지능정보시스템과정 (佐賀大学理工学部理工学科 知能情報システム工学コース)
  * [`R0252022`] [프로그래밍개론2(プログラミング概論Ⅱ)(나카야마 코이치(中山　功一), 2학년 2학기)](./2.2-introduction-to-programming-2) @사가대학 이공학부 이공학과 지능정보시스템과정 (佐賀大学理工学部理工学科 知能情報システム工学コース)
- * [`CIS3001`] [자료구조(박재형, 2학년 2학기)](./2.2-data-structures) @컴퓨터정보통신공학과
- * [`CIS2006`] [고급프로그래밍및실습(원용관, 2학년 2학기)](./2.2-advanced-computer-programming-and-practice) @컴퓨터정보통신공학과
+ * [`CIS3001`] [자료구조(박재형, 2학년 2학기)](./2.2-data-structures) @전남대학교 공과대학 컴퓨터정보통신공학과
+ * [`CIS2006`] [고급프로그래밍및실습(원용관, 2학년 2학기)](./2.2-advanced-computer-programming-and-practice) @전남대학교 공과대학 컴퓨터정보통신공학과
  * [`G1312027`] [AI수리데이터사이언스2(AI・数理・データサイエンスⅡ)(키노시타 타케히코(木下　武彦), 2학년 2학기)](./2.2-ai-math-datascience-2) @사가대학 이공학부 이공학과 데이터사이언스과정 (佐賀大学理工学部理工学科 データサイエンスコース)
- * [`CIS3031`] [데이터베이스시스템(유선용, 3학년 1학기)](./3.1-data-base-systems) @컴퓨터정보통신공학과
- * [`ECE9063`] [웹프로그래밍(김명진, 3학년 1학기)](./3.1-web-programming) @컴퓨터정보통신공학과
- * [`CIS2001`] [운영체제(박태준, 3학년 1학기)](./3.1-operating-system) @소프트웨어공학과
- * [`CIS3003`] [인공지능(김찬수, 3학년 1학기)](./3.1-artificial-intelligence) @지능형모빌리티융합학과
- * [`CIS3030`] [소프트웨어공학론(김미수, 3학년 1학기)](./3.1-software-enginnering) @소프트웨어공학과
+ * [`CIS3031`] [데이터베이스시스템(유선용, 3학년 1학기)](./3.1-data-base-systems) @전남대학교 공과대학 컴퓨터정보통신공학과
+ * [`ECE9063`] [웹프로그래밍(김명진, 3학년 1학기)](./3.1-web-programming) @전남대학교 공과대학 컴퓨터정보통신공학과
+ * [`CIS2001`] [운영체제(박태준, 3학년 1학기)](./3.1-operating-system) @전남대학교 공과대학 소프트웨어공학과
+ * [`CIS3003`] [인공지능(김찬수, 3학년 1학기)](./3.1-artificial-intelligence) @전남대학교 AI융합대학 지능형모빌리티융합학과
+ * [`CIS3030`] [소프트웨어공학론(김미수, 3학년 1학기)](./3.1-software-enginnering) @전남대학교 공과대학 소프트웨어공학과
  * [`R0253270`] [네트워크 시스템 (ネットワークシステム)(오타니 마코토 (大谷　誠), 3학년 2학기)](./3.2-network-systems) @사가대학 이공학부 이공학과 지능정보시스템과정 (佐賀大学理工学部理工学科 知能情報システム工学コース)
- * [`ECE3087`] [컴퓨터공학종합프로젝트1(캡스톤디자인)(박수형, 박호성, 3학년 2학기)](./3.2-computer-engineering-project1(capstone-design)) @컴퓨터정보통신공학과
- * [`ECE3088`] [임베디드소프트웨어(김명진, 3학년 2학기)](./3.2-embedded-software) @컴퓨터정보통신공학과
- * [`CPE9020`] [기계학습(이재열, 4학년 1학기)](./4.1-machine-learning) @산업공학과
- * [`CIS3012`] [분산시스템(김경백, 4학년 1학기)](./4.1-distributed-systems) @인공지능학부 소프트웨어전공
- * [`ECE4086`] [컴퓨터공학종합프로젝트2(캡스톤디자인)(박수형, 박호성, 4학년 1학기)](./4.1-computer-engineering-project2(capstone-design)) @컴퓨터정보통신공학과
+ * [`ECE3087`] [컴퓨터공학종합프로젝트1(캡스톤디자인)(박수형, 박호성, 3학년 2학기)](./3.2-computer-engineering-project1(capstone-design)) @전남대학교 공과대학 컴퓨터정보통신공학과
+ * [`ECE3088`] [임베디드소프트웨어(김명진, 3학년 2학기)](./3.2-embedded-software) @전남대학교 공과대학 컴퓨터정보통신공학과
+ * [`CPE9020`] [기계학습(이재열, 4학년 1학기)](./4.1-machine-learning) @전남대학교 공과대학 산업공학과
+ * [`CIS3012`] [분산시스템(김경백, 4학년 1학기)](./4.1-distributed-systems) @전남대학교 AI융합대학 인공지능학부 소프트웨어전공
+ * [`ECE4086`] [컴퓨터공학종합프로젝트2(캡스톤디자인)(박수형, 박호성, 4학년 1학기)](./4.1-computer-engineering-project2(capstone-design)) @전남대학교 공과대학 컴퓨터정보통신공학과
  * [`R0253160`] [화상정보처리 (画像情報処理)(오쿠무라 히로시 (奥村　浩), 4학년 2학기)](./4.2-digital-image-processing) @사가대학 이공학부 이공학과 지능정보시스템과정 (佐賀大学理工学部理工学科 知能情報システム工学コース)
