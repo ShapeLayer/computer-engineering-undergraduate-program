@@ -1,0 +1,180 @@
+
+「Brainfxxk」という難解なプログラミング言語のソースコードの実行結果を記述してください。ソースコードの長さ$L$は$10,000$を超えません。
+
+\begin{lstlisting}
+<br />
+\end{lstlisting}
+
+Brainfxxkは以下の規則に従って実行されます。
+
+\begin{enumerate}
+\item 
+Brainfxxkインタプリタは、32768個の\texttt{char}配列と、この配列のインデックスを指すポインタをメモリ空間として持ちます。配列のすべての要素とポインタは\texttt{0}で初期化されます。
+
+\begin{lstlisting}
+// define
+char mem[32768];
+int ptr;
+
+// init
+memset(mem, 0, sizeof(mem));
+ptr = 0;
+\end{lstlisting}
+
+\item 
+インタプリタは、ソースコードの各文字を左端から右方向へ読み込みます。右端の文字まで読み込んだら、次の行の左端から同じ動作を繰り返します。
+
+
+\item 
+2の過程で読み込まれた個々の文字は、以下のように処理されます。
+
+\begin{itemize}
+\item 
+\texttt{>} : ポインタを1増加させます。
+32768以上のメモリアドレスは存在しません。メモリアドレス32768はオーバーフローしてメモリアドレス0になります。
+
+
+\item 
+\texttt{<} : ポインタを1減少させます。
+負のメモリアドレスは存在しません。メモリアドレス-1はアンダーフローしてメモリアドレス32767になります。
+
+
+\item 
+\texttt{+} : ポインタが指す要素の値を1増加させます。
+
+
+\item 
+\texttt{-} : ポインタが指す要素の値を1減少させます。
+
+
+\item 
+\texttt{.} : ポインタが指す要素の値をASCIIコード文字として出力します。
+
+
+\item 
+\texttt{,} : 標準入力から値を読み込み、その値のASCIIコードをポインタが指す要素に上書きします。
+
+
+\item 
+\texttt{[} - ポインタが指すバイトの値が0の場合、対応する\texttt{]}に移動します。
+
+
+\item 
+\texttt{]} - ポインタが指すバイトの値が0でない場合、対応する\texttt{[}に戻ります。
+
+
+\item 
+\texttt{\0} : EOF (End of File); プログラムを終了します。
+
+
+\item 
+実際のBrainfxxkとは異なり、この問題では\texttt{,}文字は無視されます。
+
+
+\item 
+上記の定義を除くすべての文字は無視され、処理は続行されます。
+
+
+\end{itemize}
+
+\end{enumerate}
+
+インタプリタはEOF (\texttt{\0}; ASCIIコード0) を受け取るまで、入力を受け取り続ける必要があります。もしローカルで解答を実行する際に、パイプライン¹を使用せずに直接標準入力に値を入力したい場合は、EOF文字を直接入力する必要があります。
+
+\begin{itemize}
+\item 
+Windows: \texttt{Ctrl} + \texttt{Z}を入力し、\texttt{Enter}キーを押します。
+
+
+\item 
+Linux/macOS: \texttt{Ctrl} + \texttt{D}を入力し、\texttt{Enter}キーを押します。
+
+
+\end{itemize}
+
+この過程で標準入力に表示される\texttt{^Z}や\texttt{^D}は、実際の\texttt{^Z}、\texttt{^D}という文字列ではなく、\texttt{Ctrl}と\texttt{Z}または\texttt{D}を組み合わせて入力した文字を意味します。
+
+
+¹ \texttt{cat <input> | <compiled-program>} (ex. \texttt{cat input.txt | ./a.out})
+
+\begin{lstlisting}
+<br />
+\end{lstlisting}
+
+以下にいくつかのBrainfxxkの例を示します。
+
+\begin{lstlisting}
+<br />
+\end{lstlisting}
+
+例1
+
+\begin{lstlisting}
++++++++++++++++++++++++++++++++++.
+\end{lstlisting}
+
+例1の出力
+
+\begin{lstlisting}
+!
+\end{lstlisting}
+
+例1では、\texttt{+}が33個登場し、0番メモリ空間の値が33になりました。\texttt{.}によってASCIIコード33が表す文字\texttt{!}が出力されました。
+
+\begin{lstlisting}
+<br />
+\end{lstlisting}
+
+例2
+
+\begin{lstlisting}
++++++[>++++++++++<-]>.
+\end{lstlisting}
+
+例2の出力
+
+\begin{lstlisting}
+2
+\end{lstlisting}
+\begin{enumerate}
+\item 
+最初の\texttt{+++++}により、0番メモリ空間の値が5になりました。\texttt{[}を処理する際、ポインタが指す0番メモリ空間の値が0ではないため、\texttt{]}にスキップせずに処理を続行します。
+
+
+\item 
+\texttt{[}の次の\texttt{>}によりポインタが1増加し、以降は1番メモリ空間を使用します。
+
+
+\item 
+\texttt{>}の次に\texttt{+}が10個登場し、1番メモリの値は10になりました。
+
+
+\item 
+\texttt{+}の次の\texttt{<}によりポインタが1減少し、以降は0番メモリ空間を使用します。
+
+
+\item 
+\texttt{<}の次の\texttt{-}により、0番メモリ空間の値が1減少し4になりました。
+
+
+\item 
+\texttt{]}を処理する際、ポインタが指す0番メモリ空間の値が0ではないため、これ以上進まずに\texttt{[}に戻ります。(mem = { 4, 10, ... };)
+
+
+\item 
+2〜6の過程をさらに4回繰り返し、\texttt{mem = { 0, 50, ... };}となります。
+
+
+\item 
+\texttt{]}を処理する際、ポインタが指す0番メモリ空間の値が0であるため、これ以上戻らずに次の文字を処理します。
+
+
+\item 
+\texttt{>}によりポインタが1増加し、1番メモリ空間を使用します。
+
+
+\item 
+\texttt{.}によりASCIIコード50が表す文字\texttt{2}が出力されます。
+
+
+\end{enumerate}

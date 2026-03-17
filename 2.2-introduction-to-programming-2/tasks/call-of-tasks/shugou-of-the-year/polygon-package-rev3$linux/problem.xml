@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<problem revision="3" short-name="zaru-of-the-year" url="https://polygon.codeforces.com/p4JPC67/ShapeLayer/zaru-of-the-year">
+    <names>
+        <name language="japanese" value="Shugou of the Year"/>
+        <name language="korean" value="Zaru of the Year"/>
+    </names>
+    <statements>
+        <statement charset="UTF-8" language="japanese" mathjax="true" path="statements/japanese/problem.tex" type="application/x-tex"/>
+        <statement charset="UTF-8" language="korean" mathjax="true" path="statements/korean/problem.tex" type="application/x-tex"/>
+        <statement charset="UTF-8" language="japanese" mathjax="true" path="statements/.html/japanese/problem.html" type="text/html"/>
+        <statement charset="UTF-8" language="korean" mathjax="true" path="statements/.html/korean/problem.html" type="text/html"/>
+    </statements>
+    <judging cpu-name="Intel(R) Core(TM) i3-8100 CPU @ 3.60GHz" cpu-speed="3600" input-file="" output-file="" run-count="1">
+        <testset name="example">
+            <time-limit>10000</time-limit>
+            <memory-limit>268435456</memory-limit>
+            <test-count>1</test-count>
+            <input-path-pattern>example/%02d</input-path-pattern>
+            <answer-path-pattern>example/%02d.a</answer-path-pattern>
+            <tests>
+                <test method="manual"/>
+            </tests>
+        </testset>
+        <testset name="tests">
+            <time-limit>10000</time-limit>
+            <memory-limit>268435456</memory-limit>
+            <test-count>52</test-count>
+            <input-path-pattern>tests/%02d</input-path-pattern>
+            <answer-path-pattern>tests/%02d.a</answer-path-pattern>
+            <tests>
+                <test cmd="generator 50" method="generated"/>
+                <test cmd="generator 51" method="generated"/>
+                <test cmd="generator 52" method="generated"/>
+                <test cmd="generator 53" method="generated"/>
+                <test cmd="generator 54" method="generated"/>
+                <test cmd="generator 55" method="generated"/>
+                <test cmd="generator 56" method="generated"/>
+                <test cmd="generator 57" method="generated"/>
+                <test cmd="generator 58" method="generated"/>
+                <test cmd="generator 59" method="generated"/>
+                <test cmd="generator 60" method="generated"/>
+                <test cmd="generator 61" method="generated"/>
+                <test cmd="generator 62" method="generated"/>
+                <test cmd="generator 63" method="generated"/>
+                <test cmd="generator 64" method="generated"/>
+                <test cmd="generator 65" method="generated"/>
+                <test cmd="generator 66" method="generated"/>
+                <test cmd="generator 67" method="generated"/>
+                <test cmd="generator 68" method="generated"/>
+                <test cmd="generator 69" method="generated"/>
+                <test cmd="generator 70" method="generated"/>
+                <test cmd="generator 71" method="generated"/>
+                <test cmd="generator 72" method="generated"/>
+                <test cmd="generator 73" method="generated"/>
+                <test cmd="generator 74" method="generated"/>
+                <test cmd="generator 75" method="generated"/>
+                <test cmd="generator 76" method="generated"/>
+                <test cmd="generator 77" method="generated"/>
+                <test cmd="generator 78" method="generated"/>
+                <test cmd="generator 79" method="generated"/>
+                <test cmd="generator 80" method="generated"/>
+                <test cmd="generator 81" method="generated"/>
+                <test cmd="generator 82" method="generated"/>
+                <test cmd="generator 83" method="generated"/>
+                <test cmd="generator 84" method="generated"/>
+                <test cmd="generator 85" method="generated"/>
+                <test cmd="generator 86" method="generated"/>
+                <test cmd="generator 87" method="generated"/>
+                <test cmd="generator 88" method="generated"/>
+                <test cmd="generator 89" method="generated"/>
+                <test cmd="generator 90" method="generated"/>
+                <test cmd="generator 91" method="generated"/>
+                <test cmd="generator 92" method="generated"/>
+                <test cmd="generator 93" method="generated"/>
+                <test cmd="generator 94" method="generated"/>
+                <test cmd="generator 95" method="generated"/>
+                <test cmd="generator 96" method="generated"/>
+                <test cmd="generator 97" method="generated"/>
+                <test cmd="generator 98" method="generated"/>
+                <test cmd="generator 99" method="generated"/>
+                <test cmd="generator 100" method="generated"/>
+                <test cmd="generator 1000000" method="generated"/>
+            </tests>
+        </testset>
+    </judging>
+    <files>
+        <resources>
+            <file path="files/olymp.sty"/>
+            <file path="files/problem.tex"/>
+            <file path="files/statements.ftl"/>
+            <file path="files/testlib.h" type="h.g++"/>
+        </resources>
+        <executables>
+            <executable>
+                <source path="files/generator.cc" type="cpp.gcc14-64-msys2-g++23"/>
+            </executable>
+            <executable>
+                <source path="files/validator.cc" type="cpp.gcc14-64-msys2-g++23"/>
+            </executable>
+        </executables>
+    </files>
+    <assets>
+        <checker name="std::wcmp.cpp" type="testlib">
+            <source path="files/check.cpp" type="cpp.g++17"/>
+            <copy path="check.cpp"/>
+            <testset>
+                <test-count>0</test-count>
+                <input-path-pattern>files/tests/checker-tests/%02d</input-path-pattern>
+                <output-path-pattern>files/tests/checker-tests/%02d.o</output-path-pattern>
+                <answer-path-pattern>files/tests/checker-tests/%02d.a</answer-path-pattern>
+                <tests/>
+            </testset>
+        </checker>
+        <validators>
+            <validator>
+                <source path="files/validator.cc" type="cpp.gcc14-64-msys2-g++23"/>
+                <testset>
+                    <test-count>0</test-count>
+                    <input-path-pattern>files/tests/validator-tests/%02d</input-path-pattern>
+                    <tests/>
+                </testset>
+            </validator>
+        </validators>
+        <solutions>
+            <solution tag="main">
+                <source path="solutions/solution.cc" type="cpp.gcc14-64-msys2-g++23"/>
+            </solution>
+        </solutions>
+    </assets>
+    <properties>
+        <property name="tests-wellformed" value="true"/>
+    </properties>
+    <stresses>
+        <stress-count>0</stress-count>
+        <stress-path-pattern>stresses/%03d</stress-path-pattern>
+        <list/>
+    </stresses>
+</problem>

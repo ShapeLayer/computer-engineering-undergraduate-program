@@ -1,0 +1,7 @@
+[apple]
+[orange][apple]
+[grape][orange][apple]
+[apple][grape][orange]
+[banana][apple][grape][orange]
+[grape][banana][apple][orange]
+[orange][grape][banana][apple]

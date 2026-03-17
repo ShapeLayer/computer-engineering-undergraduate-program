@@ -1,0 +1,8 @@
+[carrot]
+[tomato][carrot]
+[carrot][tomato]
+[onion][carrot][tomato]
+[tomato][onion][carrot]
+[pumpkin][tomato][onion][carrot]
+[paprika][pumpkin][tomato][onion][carrot]
+[onion][paprika][pumpkin][tomato][carrot]

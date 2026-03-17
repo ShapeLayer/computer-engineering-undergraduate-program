@@ -1,0 +1,27 @@
+1:root
+
+1:root
+   2:totamo
+
+   1:onion
+2:root
+   3:totamo
+
+   1:onion
+2:root
+      3:carrot
+   4:totamo
+
+   1:onion
+2:root
+   3:totamo
+
+      1:carrot
+   2:onion
+3:root
+   4:totamo
+
+      1:carrot
+   2:onion
+3:root
+
