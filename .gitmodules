@@ -40,3 +40,9 @@
 [submodule "2.2-introduction-to-programming-2/projects/n.koldline"]
 	path = 2.2-introduction-to-programming-2/projects/n.koldline
 	url = https://github.com/ShapeLayer/n.koldline
+[submodule "4.1-mobile-communication-system/tasks/02-ofdm/simulate-ofdm-tx-rx"]
+	path = 4.1-mobile-communication-system/tasks/02-ofdm/simulate-ofdm-tx-rx
+	url = https://github.com/ShapeLayer/simulate-ofdm-tx-rx
+[submodule "4.1-virtual-reality/project"]
+	path = 4.1-virtual-reality/project
+	url = https://github.com/ShapeLayer/overfitting-mass-spring-damper-model-rtx3050
