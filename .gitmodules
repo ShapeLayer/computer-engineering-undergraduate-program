@@ -46,3 +46,6 @@
 [submodule "4.1-virtual-reality/project"]
 	path = 4.1-virtual-reality/project
 	url = https://github.com/ShapeLayer/overfitting-mass-spring-damper-model-rtx3050
+[submodule "4.1-computer-engineering-project2(capstone-design)/project"]
+	path = 4.1-computer-engineering-project2(capstone-design)/project
+	url = https://github.com/ShapeLayer/boosted-neural-decoders-torch
